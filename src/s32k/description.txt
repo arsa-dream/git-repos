@@ -1,0 +1,3 @@
+Simplest project: 
+• Configure GPIO 
+• Output to LED follows switch input 
