@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.12.10 on win32)" generated="2026-03-15T02:56:27.105849" rpa="false" schemaversion="5">
+<suite id="s1" name="S32K Register Tests" source="D:\git-repos\test-env\robot-tests\tests\s32k_register_tests.robot">
+<test id="s1-t1" name="Run S32K144 Register Tests From CSV" line="10">
+<kw name="Read Csv File To Associative" owner="CSVLibrary">
+<msg time="2026-03-15T02:56:27.207005" level="INFO">${test_cases} = [{'input_address': '0x40048000', 'input_value': '0x00000000', 'output_address': '0x40048000', 'expected_value': '0x00000000'}, {'input_address': '0x40049000', 'input_value': '0x00000000', 'output_addr...</msg>
+<var>${test_cases}</var>
+<arg>${CSV_FILE}</arg>
+<doc>Read CSV file and return its content as a Python list of dictionaries.</doc>
+<status status="PASS" start="2026-03-15T02:56:27.189256" elapsed="0.017749"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-03-15T02:56:27.207005" level="INFO">${in_addr} = 0x40048000</msg>
+<var>${in_addr}</var>
+<arg>${row}</arg>
+<arg>input_address</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-03-15T02:56:27.207005" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-03-15T02:56:27.207005" level="INFO">${in_val} = 0x00000000</msg>
+<var>${in_val}</var>
+<arg>${row}</arg>
+<arg>input_value</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-03-15T02:56:27.207005" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-03-15T02:56:27.207005" level="INFO">${out_addr} = 0x40048000</msg>
+<var>${out_addr}</var>
+<arg>${row}</arg>
+<arg>output_address</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-03-15T02:56:27.207005" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-03-15T02:56:27.207005" level="INFO">${exp_val} = 0x00000000</msg>
+<var>${exp_val}</var>
+<arg>${row}</arg>
+<arg>expected_value</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-03-15T02:56:27.207005" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-03-15T02:56:27.207005" level="INFO">Writing 0x00000000 to 0x40048000</msg>
+<arg>Writing ${in_val} to ${in_addr}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-03-15T02:56:27.207005" elapsed="0.000000"/>
+</kw>
+<kw name="Write Register" owner="S32K144GdbLibrary">
+<arg>${in_addr}</arg>
+<arg>${in_val}</arg>
+<doc>Write a value to a memory-mapped register on the S32K144.</doc>
+<status status="PASS" start="2026-03-15T02:56:27.207005" elapsed="0.097065"/>
+</kw>
+<kw name="Read Register" owner="S32K144GdbLibrary">
+<msg time="2026-03-15T02:56:27.515205" level="INFO">${actual} = 0x00000000</msg>
+<var>${actual}</var>
+<arg>${out_addr}</arg>
+<doc>Read a value from a memory-mapped register. Returns hex string.</doc>
+<status status="PASS" start="2026-03-15T02:56:27.304070" elapsed="0.211135"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${exp_val.lower()}</arg>
+<arg>msg=FAIL: ${out_addr} expected ${exp_val} but got ${actual}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-03-15T02:56:27.515205" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-03-15T02:56:27.515205" level="INFO">PASS: 0x40048000 = 0x00000000</msg>
+<arg>PASS: ${out_addr} = ${actual}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-03-15T02:56:27.515205" elapsed="0.000000"/>
+</kw>
+<var name="${row}">{'input_address': '0x40048000', 'input_value': '0x00000000', 'output_address': '0x40048000', 'expected_value': '0x00000000'}</var>
+<status status="PASS" start="2026-03-15T02:56:27.207005" elapsed="0.308200"/>
+</iter>
+<iter>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-03-15T02:56:27.515205" level="INFO">${in_addr} = 0x40049000</msg>
+<var>${in_addr}</var>
+<arg>${row}</arg>
+<arg>input_address</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-03-15T02:56:27.515205" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-03-15T02:56:27.515205" level="INFO">${in_val} = 0x00000000</msg>
+<var>${in_val}</var>
+<arg>${row}</arg>
+<arg>input_value</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-03-15T02:56:27.515205" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-03-15T02:56:27.515205" level="INFO">${out_addr} = 0x40049000</msg>
+<var>${out_addr}</var>
+<arg>${row}</arg>
+<arg>output_address</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-03-15T02:56:27.515205" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-03-15T02:56:27.515205" level="INFO">${exp_val} = 0x00000000</msg>
+<var>${exp_val}</var>
+<arg>${row}</arg>
+<arg>expected_value</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-03-15T02:56:27.515205" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-03-15T02:56:27.515205" level="INFO">Writing 0x00000000 to 0x40049000</msg>
+<arg>Writing ${in_val} to ${in_addr}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-03-15T02:56:27.515205" elapsed="0.000000"/>
+</kw>
+<kw name="Write Register" owner="S32K144GdbLibrary">
+<arg>${in_addr}</arg>
+<arg>${in_val}</arg>
+<doc>Write a value to a memory-mapped register on the S32K144.</doc>
+<status status="PASS" start="2026-03-15T02:56:27.515205" elapsed="0.275629"/>
+</kw>
+<kw name="Read Register" owner="S32K144GdbLibrary">
+<msg time="2026-03-15T02:56:28.007987" level="INFO">${actual} = 0x00000000</msg>
+<var>${actual}</var>
+<arg>${out_addr}</arg>
+<doc>Read a value from a memory-mapped register. Returns hex string.</doc>
+<status status="PASS" start="2026-03-15T02:56:27.790834" elapsed="0.217153"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${exp_val.lower()}</arg>
+<arg>msg=FAIL: ${out_addr} expected ${exp_val} but got ${actual}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-03-15T02:56:28.007987" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-03-15T02:56:28.007987" level="INFO">PASS: 0x40049000 = 0x00000000</msg>
+<arg>PASS: ${out_addr} = ${actual}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-03-15T02:56:28.007987" elapsed="0.000000"/>
+</kw>
+<var name="${row}">{'input_address': '0x40049000', 'input_value': '0x00000000', 'output_address': '0x40049000', 'expected_value': '0x00000000'}</var>
+<status status="PASS" start="2026-03-15T02:56:27.515205" elapsed="0.492782"/>
+</iter>
+<var>${row}</var>
+<value>@{test_cases}</value>
+<status status="PASS" start="2026-03-15T02:56:27.207005" elapsed="0.800982"/>
+</for>
+<doc>Reads test cases from CSV and validates register read/write on S32K144</doc>
+<status status="PASS" start="2026-03-15T02:56:27.189256" elapsed="0.818731"/>
+</test>
+<status status="PASS" start="2026-03-15T02:56:27.105849" elapsed="0.902138"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="S32K Register Tests" id="s1" pass="1" fail="0" skip="0">S32K Register Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
