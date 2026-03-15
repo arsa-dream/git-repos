@@ -37,4 +37,5 @@ jobs:
         flake8 test-env/robot-tests/resources/ --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pytest
+        echo "Tests are run locally via Robot Framework against physical hardware."
+        echo "Skipping automated pytest — no unit tests applicable."
