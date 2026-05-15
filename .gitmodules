@@ -1,0 +1,3 @@
+[submodule "src/s32k/third_party/free_rtos"]
+	path = src/s32k/third_party/free_rtos
+	url = https://github.com/FreeRTOS/FreeRTOS-Kernel
