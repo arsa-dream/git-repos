@@ -180,6 +180,37 @@ void vApplicationMallocFailedHook(void)
 	for(;;) {}
 }
 
+/*---------------------------------------------------------------------------
+ * Task: Watchdog Refresh
+ *
+ * Priority : configMAX_PRIORITIES - 1 (highest application priority)
+ * Period   : 500ms -- well within 4s WDOG timeout (WDOG_Cfg.h)
+ * Stack    : 128 words -- minimal, only refreshes WDOG
+ *
+ * ISO 26262 Note:
+ *   Dedicated highest-priority task ensures WDOG is kicked only when the
+ *   FreeRTOS scheduler is alive and all lower-priority tasks are running.
+ *   If any task starves the scheduler or causes a hard fault, this task
+ *   will miss its 500ms deadline within 4s and the WDOG will reset the MCU
+ *   into a known safe state -- this is the primary software safety mechanism.
+ *
+ *   Intentionally kept in main.c (not KIT_Appl.c) because it is system-level
+ *   safety infrastructure, not application logic.
+ *--------------------------------------------------------------------------*/
+static void vTask_WdogRefresh(void *pvParameters)
+{
+    (void)pvParameters;
+
+    const TickType_t xPeriod       = pdMS_TO_TICKS(500u);
+    TickType_t       xLastWakeTime = xTaskGetTickCount();
+
+    for(;;)
+    {
+        vTaskDelayUntil(&xLastWakeTime, xPeriod);
+        WDOG_Refresh();
+    }
+}
+
 /*===========================================================================
  * MAIN ENTRY POINT
  *=========================================================================*/

@@ -38,28 +38,27 @@ src/APPL/KIT_Appl.o: ../src/APPL/KIT_Appl.c \
  D:/git-repos/src/s32k/include/MCAL/LPUARTn_Core.h \
  D:/git-repos/src/s32k/include/MCAL/ADC_Core.h \
  D:/git-repos/src/s32k/include/MCAL/ADC_Cfg.h \
- C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/string.h \
- C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/cstring \
+ D:/git-repos/src/s32k/third_party/free_rtos/include/FreeRTOS.h \
+ C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/stddef.h \
+ C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/cstddef \
  C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/null.h \
  C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/size_t.h \
+ C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/max_align_t.h \
  C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/ewl_rsize_t.h \
- C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/string_api.h \
- C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/signal.h \
- C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/csignal \
- C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/stdlib.h \
- C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/cstdlib \
- C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/div_t.h \
- C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/math.h \
- C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/cmath \
- C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/cfloat \
- C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/ewl_t.h \
- C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/arm/float.ARM.h \
- C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/math_api.h \
- C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/ewl_misra_types.h \
- C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/math_inlines.h \
- C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/math_config.h \
- C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/arm/math.ARM.h \
- C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/cerrno
+ D:/git-repos/src/s32k/include/MDLW/FreeRTOSConfig.h \
+ D:/git-repos/src/s32k/third_party/free_rtos/include/projdefs.h \
+ D:/git-repos/src/s32k/third_party/free_rtos/include/portable.h \
+ D:/git-repos/src/s32k/third_party/free_rtos/include/deprecated_definitions.h \
+ D:/git-repos/src/s32k/third_party/free_rtos/portable/GCC/ARM_CM4F/portmacro.h \
+ D:/git-repos/src/s32k/third_party/free_rtos/include/mpu_wrappers.h \
+ D:/git-repos/src/s32k/third_party/free_rtos/include/task.h \
+ D:/git-repos/src/s32k/third_party/free_rtos/include/list.h \
+ D:/git-repos/src/s32k/third_party/free_rtos/include/semphr.h \
+ D:/git-repos/src/s32k/third_party/free_rtos/include/queue.h \
+ D:/git-repos/src/s32k/third_party/free_rtos/include/task.h \
+ C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/string.h \
+ C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/cstring \
+ C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/string_api.h
 
 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/lib_c99.prefix:
 
@@ -139,46 +138,44 @@ D:/git-repos/src/s32k/include/MCAL/ADC_Core.h:
 
 D:/git-repos/src/s32k/include/MCAL/ADC_Cfg.h:
 
-C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/string.h:
+D:/git-repos/src/s32k/third_party/free_rtos/include/FreeRTOS.h:
 
-C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/cstring:
+C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/stddef.h:
+
+C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/cstddef:
 
 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/null.h:
 
 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/size_t.h:
 
+C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/max_align_t.h:
+
 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/ewl_rsize_t.h:
 
+D:/git-repos/src/s32k/include/MDLW/FreeRTOSConfig.h:
+
+D:/git-repos/src/s32k/third_party/free_rtos/include/projdefs.h:
+
+D:/git-repos/src/s32k/third_party/free_rtos/include/portable.h:
+
+D:/git-repos/src/s32k/third_party/free_rtos/include/deprecated_definitions.h:
+
+D:/git-repos/src/s32k/third_party/free_rtos/portable/GCC/ARM_CM4F/portmacro.h:
+
+D:/git-repos/src/s32k/third_party/free_rtos/include/mpu_wrappers.h:
+
+D:/git-repos/src/s32k/third_party/free_rtos/include/task.h:
+
+D:/git-repos/src/s32k/third_party/free_rtos/include/list.h:
+
+D:/git-repos/src/s32k/third_party/free_rtos/include/semphr.h:
+
+D:/git-repos/src/s32k/third_party/free_rtos/include/queue.h:
+
+D:/git-repos/src/s32k/third_party/free_rtos/include/task.h:
+
+C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/string.h:
+
+C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/cstring:
+
 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/string_api.h:
-
-C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/signal.h:
-
-C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/csignal:
-
-C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/stdlib.h:
-
-C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/cstdlib:
-
-C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/div_t.h:
-
-C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/math.h:
-
-C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/cmath:
-
-C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/cfloat:
-
-C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/ewl_t.h:
-
-C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/arm/float.ARM.h:
-
-C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/math_api.h:
-
-C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/ewl_misra_types.h:
-
-C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/math_inlines.h:
-
-C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/math_config.h:
-
-C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/arm/math.ARM.h:
-
-C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/cerrno:
