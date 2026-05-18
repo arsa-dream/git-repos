@@ -37,7 +37,22 @@ src/main.o: ../src/main.c \
  D:/git-repos/src/s32k/include/MCAL/LPUARTn_Cfg.h \
  D:/git-repos/src/s32k/include/MCAL/LPUARTn_Core.h \
  D:/git-repos/src/s32k/include/MCAL/ADC_Core.h \
- D:/git-repos/src/s32k/include/MCAL/ADC_Cfg.h
+ D:/git-repos/src/s32k/include/MCAL/ADC_Cfg.h \
+ D:/git-repos/src/s32k/third_party/free_rtos/include/FreeRTOS.h \
+ C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/stddef.h \
+ C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/cstddef \
+ C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/null.h \
+ C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/size_t.h \
+ C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/max_align_t.h \
+ C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/ewl_rsize_t.h \
+ D:/git-repos/src/s32k/include/MDLW/FreeRTOSConfig.h \
+ D:/git-repos/src/s32k/third_party/free_rtos/include/projdefs.h \
+ D:/git-repos/src/s32k/third_party/free_rtos/include/portable.h \
+ D:/git-repos/src/s32k/third_party/free_rtos/include/deprecated_definitions.h \
+ D:/git-repos/src/s32k/third_party/free_rtos/portable/GCC/ARM_CM4F/portmacro.h \
+ D:/git-repos/src/s32k/third_party/free_rtos/include/mpu_wrappers.h \
+ D:/git-repos/src/s32k/third_party/free_rtos/include/task.h \
+ D:/git-repos/src/s32k/third_party/free_rtos/include/list.h
 
 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/lib_c99.prefix:
 
@@ -116,3 +131,33 @@ D:/git-repos/src/s32k/include/MCAL/LPUARTn_Core.h:
 D:/git-repos/src/s32k/include/MCAL/ADC_Core.h:
 
 D:/git-repos/src/s32k/include/MCAL/ADC_Cfg.h:
+
+D:/git-repos/src/s32k/third_party/free_rtos/include/FreeRTOS.h:
+
+C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/stddef.h:
+
+C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/cstddef:
+
+C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/null.h:
+
+C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/size_t.h:
+
+C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/max_align_t.h:
+
+C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_C/include/ewl_rsize_t.h:
+
+D:/git-repos/src/s32k/include/MDLW/FreeRTOSConfig.h:
+
+D:/git-repos/src/s32k/third_party/free_rtos/include/projdefs.h:
+
+D:/git-repos/src/s32k/third_party/free_rtos/include/portable.h:
+
+D:/git-repos/src/s32k/third_party/free_rtos/include/deprecated_definitions.h:
+
+D:/git-repos/src/s32k/third_party/free_rtos/portable/GCC/ARM_CM4F/portmacro.h:
+
+D:/git-repos/src/s32k/third_party/free_rtos/include/mpu_wrappers.h:
+
+D:/git-repos/src/s32k/third_party/free_rtos/include/task.h:
+
+D:/git-repos/src/s32k/third_party/free_rtos/include/list.h:

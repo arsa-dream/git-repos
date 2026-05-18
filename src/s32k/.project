@@ -23,4 +23,41 @@
 		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/MDLW/event_groups.c</name>
+			<type>1</type>
+			<location>D:/git-repos/src/s32k/third_party/free_rtos/event_groups.c</location>
+		</link>
+		<link>
+			<name>src/MDLW/heap_4.c</name>
+			<type>1</type>
+			<location>D:/git-repos/src/s32k/third_party/free_rtos/portable/MemMang/heap_4.c</location>
+		</link>
+		<link>
+			<name>src/MDLW/list.c</name>
+			<type>1</type>
+			<location>D:/git-repos/src/s32k/third_party/free_rtos/list.c</location>
+		</link>
+		<link>
+			<name>src/MDLW/port.c</name>
+			<type>1</type>
+			<location>D:/git-repos/src/s32k/third_party/free_rtos/portable/GCC/ARM_CM4F/port.c</location>
+		</link>
+		<link>
+			<name>src/MDLW/queue.c</name>
+			<type>1</type>
+			<location>D:/git-repos/src/s32k/third_party/free_rtos/queue.c</location>
+		</link>
+		<link>
+			<name>src/MDLW/tasks.c</name>
+			<type>1</type>
+			<location>D:/git-repos/src/s32k/third_party/free_rtos/tasks.c</location>
+		</link>
+		<link>
+			<name>src/MDLW/timers.c</name>
+			<type>1</type>
+			<location>D:/git-repos/src/s32k/third_party/free_rtos/timers.c</location>
+		</link>
+	</linkedResources>
 </projectDescription>

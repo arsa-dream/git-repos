@@ -8,11 +8,16 @@
 -I"C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_Runtime/include"
 -I"C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/EWL_Runtime/include/arm"
 -I"D:/git-repos/src/s32k/include"
+-I"D:/git-repos/src/s32k/third_party/free_rtos/include"
+-I"D:/git-repos/src/s32k/third_party/free_rtos/portable/GCC/ARM_CM4F"
+-I"D:/git-repos/src/s32k/include/MDLW"
 -O0
 -g3
 -Wall
 -c
 -fmessage-length=0
+-mfpu=fpv4-sp-d16
+-mfloat-abi=hard
 -ffunction-sections
 -fdata-sections
 -mcpu=cortex-m4

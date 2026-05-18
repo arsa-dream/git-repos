@@ -1,3 +1,5 @@
+-mfpu=fpv4-sp-d16
+-mfloat-abi=hard
 -T
 "D:/git-repos/src/s32k/Project_Settings/Linker_Files/S32K1xx_flash.ld"
 -Wl,-Map,"S32K144_Driver.map"
@@ -11,7 +13,6 @@
 "./Project_Settings/Startup_Code/startup.o"
 "./Project_Settings/Startup_Code/startup_S32K144.o"
 "./Project_Settings/Startup_Code/system_S32K144.o"
-"./src/APPL/Bldc.o"
 "./src/APPL/KIT_Appl.o"
 "./src/MCAL/ADC_Core.o"
 "./src/MCAL/FTMn_Core.o"
@@ -20,4 +21,11 @@
 "./src/MCAL/NVIC_Core.o"
 "./src/MCAL/PORT_Core.o"
 "./src/MCAL/WDOG_Core.o"
+"./src/MDLW/event_groups.o"
+"./src/MDLW/heap_4.o"
+"./src/MDLW/list.o"
+"./src/MDLW/port.o"
+"./src/MDLW/queue.o"
+"./src/MDLW/tasks.o"
+"./src/MDLW/timers.o"
 "./src/main.o"

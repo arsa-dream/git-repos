@@ -1,0 +1,254 @@
+================================================================================
+PROJECT: S32K144 Bare-Metal MCAL + FreeRTOS RGB Rainbow Demo
+================================================================================
+
+SUMMARY
+-------
+A complete automotive-grade embedded firmware stack built from scratch on the
+NXP S32K144 (ARM Cortex-M4F, AEC-Q100, ASIL-B) without any vendor HAL. Every
+peripheral driver is written directly against silicon registers following an
+AUTOSAR Classic-inspired layered architecture (APPL / MCAL / MDLW / STRD).
+FreeRTOS V11.1.0 is integrated as a Git submodule and runs four concurrent
+tasks coordinating PWM, GPIO, UART, and watchdog refresh. The demo application
+cycles an RGB LED through a full HSV rainbow, responds to a hardware switch,
+and streams real-time colour values over UART.
+
+================================================================================
+HARDWARE
+================================================================================
+
+Board:      NXP S32K144EVB evaluation board
+MCU:        S32K144HFT0VLLT -- ARM Cortex-M4F @ 80 MHz (SPLL from 8 MHz XTAL)
+Flash:      512 KB
+RAM:        64 KB (FreeRTOS heap 20 KB, task stacks ~10 KB, globals ~8 KB)
+Toolchain:  NXP S32 Design Studio v2.2, GCC ARM 4.9, arm-none-eabi
+
+Pin assignment:
+  PTD15     Red   LED   FTM0 CH0 PWM output, Active Low
+  PTD16     Green LED   FTM0 CH1 PWM output, Active Low
+  PTD0      Blue  LED   FTM0 CH2 PWM output, Active Low
+  PTC12     SW2         GPIO input, Active Low, internal pull-up
+  LPUART1   Debug UART  115200 baud, 8N1, interrupt-driven Tx/Rx
+
+================================================================================
+FIRMWARE ARCHITECTURE
+================================================================================
+
+Layered structure (AUTOSAR Classic-inspired):
+
+  APPL/           Application logic -- KIT_Appl.c, Bldc.c
+  MCAL/           Microcontroller Abstraction Layer -- register-level drivers
+  MDLW/           Middleware -- FreeRTOS kernel (linked from third_party/)
+  STRD/           Standard utilities -- types, macros
+  third_party/
+    free_rtos/    FreeRTOS V11.1.0 Git submodule (pinned, not copied)
+
+Key architectural decisions:
+  - Cfg/Core separation: every MCAL module has a _Cfg.h (user parameters) and
+    a _Core.c/.h (implementation). Compile-time feature gating via #if guards
+    means unused peripherals generate zero code.
+  - FreeRTOS as Git submodule under third_party/ with only 7 source files
+    linked into src/MDLW/ as Eclipse linked resources. This keeps CDT makefile
+    generation clean while allowing single-command upstream updates.
+  - FreeRTOSConfig.h lives in include/MDLW/ (not inside the submodule) so
+    it is never overwritten by FreeRTOS upstream updates.
+  - No vendor HAL, no SDK middleware, no code generation. Every register write
+    is explicit and traceable to the S32K144 Reference Manual.
+
+================================================================================
+MCAL DRIVERS IMPLEMENTED
+================================================================================
+
+  Driver          Files                   Coverage
+  --------------- ----------------------- ----------------------------------------
+  PORT            PORT_Core.c/.h          Full 5-port init (A-E), PCR macro,
+                  PORT_Cfg.h              interrupt config, MUX selection
+  GPIO            GPIO_Core.h             Toggle, read, set, clear, output state
+  FTM             FTMn_Core.c/.h          FTM0 (8-ch PWM), FTM1 (1ms overflow
+                  FTMn_Cfg.h              timer), MODE/COMBINE/POL/SYNCCONF,
+                                          ISR handlers, SetDelay/IsDelayExpired
+  ADC             ADC_Core.c/.h           ADC0 + ADC1, 16 channels each, HW
+                  ADC_Cfg.h               averaging, DMA config, ISR handler
+  LPUART          LPUART_Core.c           LPUART0/1/2, interrupt-driven TX state
+                  LPUARTn_Core.h          machine with null-terminated buffer,
+                  LPUARTn_Cfg.h           ISR handoff, ring buffer Rx
+  WDOG            WDOG_Core.c/.h          Unlock sequence, window mode, prescaler,
+                  WDOG_Cfg.h              timeout config, interrupt-safe refresh
+  NVIC            NVIC_Core.c/.h          Manual IRQ priority assignment for
+                                          FTM0/1, LPUART1, ADC0/1
+
+Clock init (temporary in main.c, TODO migrate to SCG_Core.c):
+  SOSC_init_8MHz()      -- 8 MHz XTAL system oscillator
+  SPLL_init_160MHz()    -- 160 MHz PLL from 8 MHz SOSC
+  NormalRUNmode_80MHz() -- Core 80 MHz, Bus 40 MHz, Flash 26.67 MHz
+
+================================================================================
+FREERTOS INTEGRATION
+================================================================================
+
+Version:    V11.1.0 (pinned to tag, detached HEAD in submodule)
+Port:       GCC/ARM_CM4F -- Cortex-M4 with FPU hard-float ABI
+Heap:       heap_4 (first-fit with coalescence, 20 KB)
+
+Compiler flags required for ARM_CM4F port:
+  -mfpu=fpv4-sp-d16 -mfloat-abi=hard
+  (Applied to both compiler and linker miscellaneous flags in S32DS)
+
+FreeRTOSConfig.h key settings:
+  configCPU_CLOCK_HZ                  80000000 (matches NormalRUNmode)
+  configTICK_RATE_HZ                  1000     (1ms tick)
+  configTOTAL_HEAP_SIZE               20480    (20 KB)
+  configMAX_PRIORITIES                8
+  configCHECK_FOR_STACK_OVERFLOW      2        (always on during development)
+  configUSE_MALLOC_FAILED_HOOK        1
+  configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY  5
+    -- ISRs using FreeRTOS API must have priority 5-15
+    -- ISRs with priority 0-4 are safety-critical, must NOT call FreeRTOS API
+  Handler mapping (prevents duplicate symbols with S32K SDK startup):
+    xPortPendSVHandler  -> PendSV_Handler
+    vPortSVCHandler     -> SVC_Handler
+    xPortSysTickHandler -> SysTick_Handler
+
+================================================================================
+FREERTOS TASK MAP
+================================================================================
+
+  Task              Priority              Period    Stack   Purpose
+  ----------------- --------------------- --------- ------- --------------------
+  WdogRefresh       configMAX_PRIORITIES-1  500ms   128w   Kicks WDOG -- if
+                    (highest)                              this task starves,
+                                                          system resets safely.
+                                                          ISO 26262 safety gate.
+  RgbPwm            3                       20ms    256w   HSV rainbow on FTM0
+                                                          PWM CH0/1/2. Integer
+                                                          HSV->RGB, no float.
+  SwitchMonitor     2                       10ms    128w   Reads PTC12 SW2 with
+                                                          30ms debounce. Toggles
+                                                          rainbow pause/resume.
+  UartStatus        1 (lowest)              500ms   256w   Prints RGB values and
+                                                          state over LPUART1.
+                                                          No printf/sprintf --
+                                                          manual string build.
+
+Inter-task communication:
+  gstCurrentRgb     volatile struct   Written by RgbPwm, read by UartStatus
+  gu8RainbowPaused  volatile uint8    Written by SwitchMonitor, read by RgbPwm
+                                      and UartStatus
+
+Note: volatile is sufficient here because both variables are written by one
+task and read by others with no read-modify-write contention. A mutex would
+be needed if multiple tasks wrote the same variable.
+
+================================================================================
+DEMO APPLICATION BEHAVIOUR
+================================================================================
+
+On power-up:
+  1. WDOG configured for 4s timeout with 256x prescaler from LPO clock
+  2. SPLL locks to 160 MHz, core runs at 80 MHz
+  3. FTM0 configured for edge-aligned PWM on CH0/1/2
+  4. LPUART1 configured at 115200 baud, interrupt-driven
+  5. FreeRTOS scheduler starts, all four tasks begin running
+
+Normal operation:
+  - RGB LED smoothly cycles Red -> Yellow -> Green -> Cyan -> Blue ->
+    Magenta -> Red, completing one full cycle every 72 * 20ms = 1440ms
+  - UART terminal prints every 500ms:
+      RGB: R=255 G=128 B=0 | State=RUN
+  - WDOG is refreshed every 500ms (timeout is 4s, safe margin)
+
+On SW2 press (PTC12):
+  - Rainbow freezes on current colour
+  - UART prints: RGB: R=xxx G=xxx B=xxx | State=PAUSED
+  - Second press resumes from where it paused
+
+HSV to RGB conversion (integer only):
+  - Hue stored as degrees * 10 (0..3599) in uint16
+  - No floating point in any task -- safe for context-switch overhead
+  - Sector-based linear interpolation: 6 sectors of 60 degrees each
+  - Output: R, G, B each 0..255
+  - PWM duty scaled: compare_count = (duty * FTM0_CHx_MODULO_VAL) / 255
+
+UART string building (no stdio):
+  - APPL_UintToDecStr() converts uint8 to ASCII without malloc or printf
+  - String assembled character by character into a 48-byte stack buffer
+  - Avoids pulling in newlib stdio (~10 KB flash overhead)
+
+================================================================================
+BUILD CONFIGURATION (S32DS Debug)
+================================================================================
+
+Compiler flags:
+  -mcpu=cortex-m4
+  -mthumb
+  -mfpu=fpv4-sp-d16
+  -mfloat-abi=hard
+  -ffunction-sections
+  -fdata-sections
+  -fmessage-length=0
+  -g3 (debug symbols)
+  -DCPU_S32K144HFT0VLLT
+
+Linker flags:
+  -mfpu=fpv4-sp-d16
+  -mfloat-abi=hard
+  --gc-sections (dead code elimination)
+  Custom linker script: Project_Settings/Linker_Files/
+
+Include paths:
+  include/APPL
+  include/MCAL
+  include/MDLW                          (contains FreeRTOSConfig.h)
+  include/STRD
+  third_party/free_rtos/include         (FreeRTOS kernel headers)
+  third_party/free_rtos/portable/GCC/ARM_CM4F  (portmacro.h)
+  ${ARM_EWL_DIR}/EWL_C/include          (S32DS runtime)
+
+FreeRTOS source files linked as Eclipse linked resources in src/MDLW/:
+  tasks.c, queue.c, list.c, timers.c, event_groups.c
+  portable/GCC/ARM_CM4F/port.c
+  portable/MemMang/heap_4.c
+
+Build output (Debug, as of integration milestone):
+  text: 16012 bytes
+  data: 12 bytes
+  bss:  24224 bytes
+  total: 40248 bytes (dec) in S32K144_Driver.elf
+
+================================================================================
+KNOWN ISSUES / TODO
+================================================================================
+
+  TODO  Migrate SOSC/SPLL/RUN clock init from main.c to SCG_Core.c / SCG_Cfg.h
+  TODO  Implement FlexCAN (CAN FD) driver -- highest priority next MCAL module
+  TODO  Implement DMA driver -- needed for production-quality ADC/UART
+  TODO  Implement LPSPI, LPI2C drivers
+  TODO  Replace vApplicationStackOverflowHook halt with DEM error + safe state
+  TODO  Replace volatile shared variables with FreeRTOS queues for strict MISRA
+  TODO  Add FTM0_CHx_MODULO_VAL verification assert in KIT_Appl.c at startup
+  TODO  ADC0 reading not yet wired into UartStatus task (scaffolded, pending)
+  TODO  NVIC_Core.h macros for NVIC_ENABLE_INTERRUPT and NVIC_SETPRIORITY
+        currently write to wrong register (ICPR instead of ISER/IP) -- fix
+        before adding new peripherals
+
+================================================================================
+GIT REPOSITORY
+================================================================================
+
+  Repo:       github.com/arsa-dream/git-repos
+  Structure:
+    src/s32k/                 S32DS Eclipse project root
+    src/s32k/src/             Source files (APPL/MCAL/MDLW/STRD)
+    src/s32k/include/         Header files (APPL/MCAL/MDLW/STRD)
+    src/s32k/third_party/
+      free_rtos/              FreeRTOS V11.1.0 Git submodule
+    test-env/robot-tests/     Robot Framework automated tests
+    tools/port_cfg_generator/ Port configuration code generator
+    .github/workflows/        GitHub Actions CI/CD pipeline
+
+  Submodule update command:
+    git submodule update --remote src/s32k/third_party/free_rtos
+    git add src/s32k/third_party/free_rtos
+    git commit -m "chore: update FreeRTOS to latest"
+
+================================================================================
