@@ -274,9 +274,9 @@ void LPUart1_Init(void);
 void LPUart2_Init(void);
 
 
-extern	STD_FsmStates 	LPUart0_TransmitString(sint8	*s8Word,	uint8 u8Size);
+extern	void 			LPUart0_TransmitString(sint8	*s8Word,	uint8 u8Size);
 extern	STD_FsmStates 	LPUart1_TransmitString(sint8	*s8Word,	uint8 u8Size);
-extern	STD_FsmStates 	LPUart2_TransmitString(sint8	*s8Word,	uint8 u8Size);
+extern	void 			LPUart2_TransmitString(sint8	*s8Word,	uint8 u8Size);
 
 extern	void 			LPUart0_Recieve(void);
 extern	void 			LPUart1_Recieve(void);

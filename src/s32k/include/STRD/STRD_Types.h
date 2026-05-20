@@ -40,8 +40,11 @@ typedef	double							double64;
 #define		OK												TRUE
 #define		NOK												FALSE
 
-#define		NULLPTR											0u
+#define		NULL											0u
+#define		NULLPTR											((void *)0u)
 
+#define		ENABLE											1u
+#define		DISABLE											0u
 
 #define		DEBUG_MODE										TRUE /*This Flag Enables/disables all the Debugging related functionality*/
 #define 	INTERRUPT_											 /* This dummy flag used for SW design for differentiating normal functions from Interrupt functions*/

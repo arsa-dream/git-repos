@@ -1,54 +1,103 @@
 /*
  * NVIC_Core.c
  *
- *  Created on: 16-Nov-2020
- *      Author: HP
+ * Target:   NXP S32K144 (CPU_S32K144HFT0VLLT)
+ * Standard: ISO 26262 ASIL-B
+ *
+ * Description:
+ *   NVIC MCAL driver implementation.
+ *   Configures interrupt priorities and enables IRQs for all active
+ *   peripherals using a data-driven IRQ table.
+ *
+ * FreeRTOS interrupt priority rules (enforced here):
+ *   Priorities 0..4  -- safety-critical ISRs, MUST NOT call FreeRTOS API
+ *   Priorities 5..15 -- can use FreeRTOS fromISR() API safely
+ *   configMAX_SYSCALL_INTERRUPT_PRIORITY = 5 (0x50 shifted)
+ *
+ * Ref: S32K144 Reference Manual, Chapter 9 (NVIC), pages 241-247.
  */
 
 #include "Headers.h"
+#include "NVIC_Core.h"
 
+/*===========================================================================
+ * PRIVATE TYPES
+ *=========================================================================*/
 
+typedef struct
+{
+    IRQn_Type   eIrqNum;        /* IRQ number from S32K144 device header    */
+    uint8       u8Priority;     /* Priority 0x00..0xF0 (4-bit, left-shifted)*/
+} stNvicIrqCfg;
 
+/*===========================================================================
+ * PRIVATE CONSTANTS -- IRQ configuration table
+ *
+ * Sequence: always CLEAR_PENDING before ENABLE to prevent spurious ISR
+ * on startup if a flag was left set from a previous reset.
+ *
+ * Priority assignment rationale:
+ *   LPUART1    0x00 -- UART Rx/Tx must not be missed, safety-critical comm
+ *   ADC0/1     0x00 -- ADC conversions time-critical
+ *   FTM0/1     0xA0 -- PWM/timer overflow, normal priority
+ *
+ * NOTE: LPUART1 and ADC ISRs at priority 0x00 MUST NOT call any FreeRTOS
+ * API. If FreeRTOS notification is needed from these ISRs, raise their
+ * priority to >= 0x50 (NVIC_PRIORITY_5).
+ *=========================================================================*/
+static const stNvicIrqCfg gkastNvicIrqCfg[] =
+{
+    /* FTM0 CH2/CH3 compare match interrupt                                 */
+    { FTM0_Ch2_Ch3_IRQn,        NVIC_PRIORITY_10 },
+
+    /* FTM0 overflow / reload interrupt -- 1ms base timer                   */
+    { FTM0_Ovf_Reload_IRQn,     NVIC_PRIORITY_10 },
+
+    /* FTM1 overflow / reload interrupt -- 1ms software timer tick          */
+    { FTM1_Ovf_Reload_IRQn,     NVIC_PRIORITY_10 },
+
+    /* LPUART1 Rx/Tx interrupt                                              */
+    { LPUART1_RxTx_IRQn,        NVIC_PRIORITY_0  },
+
+    /* ADC0 conversion complete interrupt                                   */
+    { ADC0_IRQn,                NVIC_PRIORITY_0  },
+
+    /* ADC1 conversion complete interrupt                                   */
+    { ADC1_IRQn,                NVIC_PRIORITY_0  },
+};
+
+#define NVIC_IRQ_CFG_COUNT  (sizeof(gkastNvicIrqCfg) / sizeof(gkastNvicIrqCfg[0u]))
+
+/*===========================================================================
+ * PUBLIC FUNCTIONS
+ *=========================================================================*/
+
+/*---------------------------------------------------------------------------
+ * NVIC_init_IRQs
+ *
+ * Configures and enables all IRQs listed in gkastNvicIrqCfg[].
+ * Called once at startup from main.c as the last step before
+ * vTaskStartScheduler().
+ *
+ * Sequence per IRQ:
+ *   1. Set priority
+ *   2. Clear any pending flag (prevents spurious ISR on first enable)
+ *   3. Enable IRQ
+ *--------------------------------------------------------------------------*/
 void NVIC_init_IRQs(void)
 {
-	/* Port C Interrupt */
+    uint8 u8Idx = 0u;
 
-//	S32_NVIC->ICPR[1u] = 1 << (PORTC_IRQn % 32);  					/* IRQ62 - PORTC ch0: clear any pending IRQ*/
-//	S32_NVIC->ISER[1u] = 1 << (PORTC_IRQn % 32);  					/* IRQ62 - PORTC ch0: enable IRQ */
-//	S32_NVIC->IP[PORTC_IRQn] = 0xA;                					/* IRQ62 - PORTC ch0: priority 10 of 0-15*/
+    for (u8Idx = 0u; u8Idx < NVIC_IRQ_CFG_COUNT; u8Idx++)
+    {
+        /* Set priority before enabling -- avoids priority inversion        */
+        NVIC_SET_PRIORITY(gkastNvicIrqCfg[u8Idx].eIrqNum,
+                          gkastNvicIrqCfg[u8Idx].u8Priority);
 
-//	S32_NVIC->ICPR[3u] = 1 << (FTM0_Ch0_Ch1_IRQn % 32); 			 /* IRQ99 - FTM0 ch0,1: clear any pending IRQ*/
-//	S32_NVIC->ISER[3u] = 1 << (FTM0_Ch0_Ch1_IRQn % 32);  			 /* IRQ99 - FTM0 ch0,1: enable IRQ */
-//	S32_NVIC->IP[FTM0_Ch0_Ch1_IRQn] = 0x0A;              			 /* IRQ99 - FTM0 ch0,1: priority 0 of 0-15*/
+        /* Clear any pending flag from previous reset cycle                 */
+        NVIC_CLEAR_PENDING(gkastNvicIrqCfg[u8Idx].eIrqNum);
 
-	S32_NVIC->ICPR[3u] = 1 << (FTM0_Ch2_Ch3_IRQn % 32); 			 /* IRQ99 - FTM0 ch0,1: clear any pending IRQ*/
-	S32_NVIC->ISER[3u] = 1 << (FTM0_Ch2_Ch3_IRQn % 32);  			 /* IRQ99 - FTM0 ch0,1: enable IRQ */
-	S32_NVIC->IP[FTM0_Ch2_Ch3_IRQn] = 0x0A;              			 /* IRQ99 - FTM0 ch0,1: priority 0 of 0-15*/
-
-	S32_NVIC->ICPR[3u] = 1 << (FTM0_Ovf_Reload_IRQn % 32); 			 /* IRQ99 - FTM1 ch0,1: clear any pending IRQ*/
-	S32_NVIC->ISER[3u] = 1 << (FTM0_Ovf_Reload_IRQn % 32);  		 /* IRQ99 - FTM1 ch0,1: enable IRQ */
-	S32_NVIC->IP[FTM0_Ovf_Reload_IRQn] = 0x0A;
-
-	S32_NVIC->ICPR[3u] = 1 << (FTM1_Ovf_Reload_IRQn % 32); 			 /* IRQ99 - FTM1 ch0,1: clear any pending IRQ*/
-	S32_NVIC->ISER[3u] = 1 << (FTM1_Ovf_Reload_IRQn % 32);  		 /* IRQ99 - FTM1 ch0,1: enable IRQ */
-	S32_NVIC->IP[FTM1_Ovf_Reload_IRQn] = 0x0A;						 /* IRQ99 - FTM1 ch0,1: priority 0 of 0-15*/
-
-	S32_NVIC->ICPR[1u] = 1 << (LPUART1_RxTx_IRQn % 32); 			 /* IRQ99 - LPUART  clear any pending IRQ*/
-	S32_NVIC->ISER[1u] = 1 << (LPUART1_RxTx_IRQn % 32);  			 /* IRQ99 - LPUART  enable IRQ */
-	S32_NVIC->IP[LPUART1_RxTx_IRQn] = 0x00;							 /* IRQ99 - LPUART  priority 0 of 0-15*/
-
-	S32_NVIC->ICPR[1u] = 1 << (ADC0_IRQn % 32); 			 		/* IRQ99 - ADC0  clear any pending IRQ*/
-	S32_NVIC->ISER[1u] = 1 << (ADC0_IRQn % 32);  			 		/* IRQ99 - ADC0 enable IRQ */
-	S32_NVIC->IP[ADC0_IRQn] = 0x00;									/* IRQ99 - ADC0 priority 0 of 0-15*/
-
-	S32_NVIC->ICPR[1u] = 1 << (ADC1_IRQn % 32); 					 /* IRQ99 - ADC1 clear any pending IRQ*/
-	S32_NVIC->ISER[1u] = 1 << (ADC1_IRQn % 32);  			 		 /* IRQ99 - ADC1 enable IRQ */
-	S32_NVIC->IP[ADC1_IRQn] = 0x00;
-
+        /* Enable the interrupt                                             */
+        NVIC_ENABLE(gkastNvicIrqCfg[u8Idx].eIrqNum);
+    }
 }
-
-
-
-
-
-

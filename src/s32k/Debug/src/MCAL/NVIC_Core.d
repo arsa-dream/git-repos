@@ -27,10 +27,11 @@ src/MCAL/NVIC_Core.o: ../src/MCAL/NVIC_Core.c \
  D:/git-repos/src/s32k/include/STRD/STRD_Types.h \
  D:/git-repos/src/s32k/include/MCAL/NVIC_Core.h \
  D:/git-repos/src/s32k/include/MCAL/PORT_Cfg.h \
- D:/git-repos/src/s32k/include/STRD/STRD_Types.h \
+ D:/git-repos/src/s32k/include/MCAL/PORT_Core.h \
  D:/git-repos/src/s32k/include/MCAL/PORT_Core.h \
  D:/git-repos/src/s32k/include/MCAL/WDOG_Cfg.h \
  D:/git-repos/src/s32k/include/MCAL/WDOG_Core.h \
+ D:/git-repos/src/s32k/include/MCAL/WDOG_Cfg.h \
  D:/git-repos/src/s32k/include/MCAL/FTMn_Cfg.h \
  D:/git-repos/src/s32k/include/MCAL/FTMn_Core.h \
  D:/git-repos/src/s32k/include/MCAL/GPIO_Core.h \
@@ -95,13 +96,15 @@ D:/git-repos/src/s32k/include/MCAL/NVIC_Core.h:
 
 D:/git-repos/src/s32k/include/MCAL/PORT_Cfg.h:
 
-D:/git-repos/src/s32k/include/STRD/STRD_Types.h:
+D:/git-repos/src/s32k/include/MCAL/PORT_Core.h:
 
 D:/git-repos/src/s32k/include/MCAL/PORT_Core.h:
 
 D:/git-repos/src/s32k/include/MCAL/WDOG_Cfg.h:
 
 D:/git-repos/src/s32k/include/MCAL/WDOG_Core.h:
+
+D:/git-repos/src/s32k/include/MCAL/WDOG_Cfg.h:
 
 D:/git-repos/src/s32k/include/MCAL/FTMn_Cfg.h:
 

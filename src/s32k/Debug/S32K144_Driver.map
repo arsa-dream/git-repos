@@ -267,6 +267,8 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/APPL/KIT_Appl.o
  .data          0x00000000        0x0 ./src/APPL/KIT_Appl.o
  .bss           0x00000000        0x0 ./src/APPL/KIT_Appl.o
+ .rodata.gkastPortPinCfg
+                0x00000000       0x8c ./src/APPL/KIT_Appl.o
  .debug_macro   0x00000000      0x86e ./src/APPL/KIT_Appl.o
  .debug_macro   0x00000000       0x52 ./src/APPL/KIT_Appl.o
  .debug_macro   0x00000000       0xa0 ./src/APPL/KIT_Appl.o
@@ -321,6 +323,8 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/MCAL/ADC_Core.o
  .data          0x00000000        0x0 ./src/MCAL/ADC_Core.o
  .bss           0x00000000        0x0 ./src/MCAL/ADC_Core.o
+ .rodata.gkastPortPinCfg
+                0x00000000       0x8c ./src/MCAL/ADC_Core.o
  .text.ADC_Init
                 0x00000000       0x10 ./src/MCAL/ADC_Core.o
  .text.ADC0_Init
@@ -347,12 +351,12 @@ Discarded input sections
  .debug_macro   0x00000000     0xecad ./src/MCAL/ADC_Core.o
  .debug_macro   0x00000000      0xa19 ./src/MCAL/ADC_Core.o
  .debug_macro   0x00000000       0x28 ./src/MCAL/ADC_Core.o
- .debug_macro   0x00000000       0x3a ./src/MCAL/ADC_Core.o
- .debug_macro   0x00000000       0x1c ./src/MCAL/ADC_Core.o
- .debug_macro   0x00000000     0x275f ./src/MCAL/ADC_Core.o
- .debug_macro   0x00000000       0xb8 ./src/MCAL/ADC_Core.o
+ .debug_macro   0x00000000       0x4c ./src/MCAL/ADC_Core.o
+ .debug_macro   0x00000000       0x34 ./src/MCAL/ADC_Core.o
+ .debug_macro   0x00000000       0xa6 ./src/MCAL/ADC_Core.o
+ .debug_macro   0x00000000       0x28 ./src/MCAL/ADC_Core.o
  .debug_macro   0x00000000       0x5e ./src/MCAL/ADC_Core.o
- .debug_macro   0x00000000       0x70 ./src/MCAL/ADC_Core.o
+ .debug_macro   0x00000000       0x64 ./src/MCAL/ADC_Core.o
  .debug_macro   0x00000000      0x54d ./src/MCAL/ADC_Core.o
  .debug_macro   0x00000000      0x1ab ./src/MCAL/ADC_Core.o
  .debug_macro   0x00000000       0x28 ./src/MCAL/ADC_Core.o
@@ -396,6 +400,8 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/MCAL/FTMn_Core.o
  .data          0x00000000        0x0 ./src/MCAL/FTMn_Core.o
  .bss           0x00000000        0x0 ./src/MCAL/FTMn_Core.o
+ .rodata.gkastPortPinCfg
+                0x00000000       0x8c ./src/MCAL/FTMn_Core.o
  .text.FTMn_CHn_SetDuty
                 0x00000000       0x58 ./src/MCAL/FTMn_Core.o
  .text.TIMER_SetDelay
@@ -422,12 +428,12 @@ Discarded input sections
  .debug_macro   0x00000000     0xecad ./src/MCAL/FTMn_Core.o
  .debug_macro   0x00000000      0xa19 ./src/MCAL/FTMn_Core.o
  .debug_macro   0x00000000       0x28 ./src/MCAL/FTMn_Core.o
- .debug_macro   0x00000000       0x3a ./src/MCAL/FTMn_Core.o
- .debug_macro   0x00000000       0x1c ./src/MCAL/FTMn_Core.o
- .debug_macro   0x00000000     0x275f ./src/MCAL/FTMn_Core.o
- .debug_macro   0x00000000       0xb8 ./src/MCAL/FTMn_Core.o
+ .debug_macro   0x00000000       0x4c ./src/MCAL/FTMn_Core.o
+ .debug_macro   0x00000000       0x34 ./src/MCAL/FTMn_Core.o
+ .debug_macro   0x00000000       0xa6 ./src/MCAL/FTMn_Core.o
+ .debug_macro   0x00000000       0x28 ./src/MCAL/FTMn_Core.o
  .debug_macro   0x00000000       0x5e ./src/MCAL/FTMn_Core.o
- .debug_macro   0x00000000       0x70 ./src/MCAL/FTMn_Core.o
+ .debug_macro   0x00000000       0x64 ./src/MCAL/FTMn_Core.o
  .debug_macro   0x00000000      0x54d ./src/MCAL/FTMn_Core.o
  .debug_macro   0x00000000      0x1ab ./src/MCAL/FTMn_Core.o
  .debug_macro   0x00000000       0x28 ./src/MCAL/FTMn_Core.o
@@ -492,8 +498,9 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/MCAL/LPUART_Core.o
  .data          0x00000000        0x0 ./src/MCAL/LPUART_Core.o
  .bss           0x00000000        0x0 ./src/MCAL/LPUART_Core.o
- .bss.bRxFlag   0x00000000        0x1 ./src/MCAL/LPUART_Core.o
- .text.LPUart1_Recieve
+ .rodata.gkastPortPinCfg
+                0x00000000       0x8c ./src/MCAL/LPUART_Core.o
+ .text.LPUart1_Receive
                 0x00000000       0x60 ./src/MCAL/LPUART_Core.o
  .debug_macro   0x00000000      0x86e ./src/MCAL/LPUART_Core.o
  .debug_macro   0x00000000       0x52 ./src/MCAL/LPUART_Core.o
@@ -515,12 +522,12 @@ Discarded input sections
  .debug_macro   0x00000000     0xecad ./src/MCAL/LPUART_Core.o
  .debug_macro   0x00000000      0xa19 ./src/MCAL/LPUART_Core.o
  .debug_macro   0x00000000       0x28 ./src/MCAL/LPUART_Core.o
- .debug_macro   0x00000000       0x3a ./src/MCAL/LPUART_Core.o
- .debug_macro   0x00000000       0x1c ./src/MCAL/LPUART_Core.o
- .debug_macro   0x00000000     0x275f ./src/MCAL/LPUART_Core.o
- .debug_macro   0x00000000       0xb8 ./src/MCAL/LPUART_Core.o
+ .debug_macro   0x00000000       0x4c ./src/MCAL/LPUART_Core.o
+ .debug_macro   0x00000000       0x34 ./src/MCAL/LPUART_Core.o
+ .debug_macro   0x00000000       0xa6 ./src/MCAL/LPUART_Core.o
+ .debug_macro   0x00000000       0x28 ./src/MCAL/LPUART_Core.o
  .debug_macro   0x00000000       0x5e ./src/MCAL/LPUART_Core.o
- .debug_macro   0x00000000       0x70 ./src/MCAL/LPUART_Core.o
+ .debug_macro   0x00000000       0x64 ./src/MCAL/LPUART_Core.o
  .debug_macro   0x00000000      0x54d ./src/MCAL/LPUART_Core.o
  .debug_macro   0x00000000      0x1ab ./src/MCAL/LPUART_Core.o
  .debug_macro   0x00000000       0x28 ./src/MCAL/LPUART_Core.o
@@ -564,6 +571,8 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/MCAL/NVIC_Core.o
  .data          0x00000000        0x0 ./src/MCAL/NVIC_Core.o
  .bss           0x00000000        0x0 ./src/MCAL/NVIC_Core.o
+ .rodata.gkastPortPinCfg
+                0x00000000       0x8c ./src/MCAL/NVIC_Core.o
  .debug_macro   0x00000000      0x86e ./src/MCAL/NVIC_Core.o
  .debug_macro   0x00000000       0x52 ./src/MCAL/NVIC_Core.o
  .debug_macro   0x00000000       0xa0 ./src/MCAL/NVIC_Core.o
@@ -584,12 +593,12 @@ Discarded input sections
  .debug_macro   0x00000000     0xecad ./src/MCAL/NVIC_Core.o
  .debug_macro   0x00000000      0xa19 ./src/MCAL/NVIC_Core.o
  .debug_macro   0x00000000       0x28 ./src/MCAL/NVIC_Core.o
- .debug_macro   0x00000000       0x3a ./src/MCAL/NVIC_Core.o
- .debug_macro   0x00000000       0x1c ./src/MCAL/NVIC_Core.o
- .debug_macro   0x00000000     0x275f ./src/MCAL/NVIC_Core.o
- .debug_macro   0x00000000       0xb8 ./src/MCAL/NVIC_Core.o
+ .debug_macro   0x00000000       0x4c ./src/MCAL/NVIC_Core.o
+ .debug_macro   0x00000000       0x34 ./src/MCAL/NVIC_Core.o
+ .debug_macro   0x00000000       0xa6 ./src/MCAL/NVIC_Core.o
+ .debug_macro   0x00000000       0x28 ./src/MCAL/NVIC_Core.o
  .debug_macro   0x00000000       0x5e ./src/MCAL/NVIC_Core.o
- .debug_macro   0x00000000       0x70 ./src/MCAL/NVIC_Core.o
+ .debug_macro   0x00000000       0x64 ./src/MCAL/NVIC_Core.o
  .debug_macro   0x00000000      0x54d ./src/MCAL/NVIC_Core.o
  .debug_macro   0x00000000      0x1ab ./src/MCAL/NVIC_Core.o
  .debug_macro   0x00000000       0x28 ./src/MCAL/NVIC_Core.o
@@ -653,12 +662,12 @@ Discarded input sections
  .debug_macro   0x00000000     0xecad ./src/MCAL/PORT_Core.o
  .debug_macro   0x00000000      0xa19 ./src/MCAL/PORT_Core.o
  .debug_macro   0x00000000       0x28 ./src/MCAL/PORT_Core.o
- .debug_macro   0x00000000       0x3a ./src/MCAL/PORT_Core.o
- .debug_macro   0x00000000       0x1c ./src/MCAL/PORT_Core.o
- .debug_macro   0x00000000     0x275f ./src/MCAL/PORT_Core.o
- .debug_macro   0x00000000       0xb8 ./src/MCAL/PORT_Core.o
+ .debug_macro   0x00000000       0x4c ./src/MCAL/PORT_Core.o
+ .debug_macro   0x00000000       0x34 ./src/MCAL/PORT_Core.o
+ .debug_macro   0x00000000       0xa6 ./src/MCAL/PORT_Core.o
+ .debug_macro   0x00000000       0x28 ./src/MCAL/PORT_Core.o
  .debug_macro   0x00000000       0x5e ./src/MCAL/PORT_Core.o
- .debug_macro   0x00000000       0x70 ./src/MCAL/PORT_Core.o
+ .debug_macro   0x00000000       0x64 ./src/MCAL/PORT_Core.o
  .debug_macro   0x00000000      0x54d ./src/MCAL/PORT_Core.o
  .debug_macro   0x00000000      0x1ab ./src/MCAL/PORT_Core.o
  .debug_macro   0x00000000       0x28 ./src/MCAL/PORT_Core.o
@@ -702,6 +711,8 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/MCAL/WDOG_Core.o
  .data          0x00000000        0x0 ./src/MCAL/WDOG_Core.o
  .bss           0x00000000        0x0 ./src/MCAL/WDOG_Core.o
+ .rodata.gkastPortPinCfg
+                0x00000000       0x8c ./src/MCAL/WDOG_Core.o
  .debug_macro   0x00000000      0x86e ./src/MCAL/WDOG_Core.o
  .debug_macro   0x00000000       0x52 ./src/MCAL/WDOG_Core.o
  .debug_macro   0x00000000       0xa0 ./src/MCAL/WDOG_Core.o
@@ -722,12 +733,12 @@ Discarded input sections
  .debug_macro   0x00000000     0xecad ./src/MCAL/WDOG_Core.o
  .debug_macro   0x00000000      0xa19 ./src/MCAL/WDOG_Core.o
  .debug_macro   0x00000000       0x28 ./src/MCAL/WDOG_Core.o
- .debug_macro   0x00000000       0x3a ./src/MCAL/WDOG_Core.o
- .debug_macro   0x00000000       0x1c ./src/MCAL/WDOG_Core.o
- .debug_macro   0x00000000     0x275f ./src/MCAL/WDOG_Core.o
- .debug_macro   0x00000000       0xb8 ./src/MCAL/WDOG_Core.o
+ .debug_macro   0x00000000       0x4c ./src/MCAL/WDOG_Core.o
+ .debug_macro   0x00000000       0x34 ./src/MCAL/WDOG_Core.o
+ .debug_macro   0x00000000       0xa6 ./src/MCAL/WDOG_Core.o
+ .debug_macro   0x00000000       0x28 ./src/MCAL/WDOG_Core.o
  .debug_macro   0x00000000       0x5e ./src/MCAL/WDOG_Core.o
- .debug_macro   0x00000000       0x70 ./src/MCAL/WDOG_Core.o
+ .debug_macro   0x00000000       0x64 ./src/MCAL/WDOG_Core.o
  .debug_macro   0x00000000      0x54d ./src/MCAL/WDOG_Core.o
  .debug_macro   0x00000000      0x1ab ./src/MCAL/WDOG_Core.o
  .debug_macro   0x00000000       0x28 ./src/MCAL/WDOG_Core.o
@@ -1437,6 +1448,8 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/main.o
  .data          0x00000000        0x0 ./src/main.o
  .bss           0x00000000        0x0 ./src/main.o
+ .rodata.gkastPortPinCfg
+                0x00000000       0x8c ./src/main.o
  .debug_macro   0x00000000      0x86e ./src/main.o
  .debug_macro   0x00000000       0x52 ./src/main.o
  .debug_macro   0x00000000       0xa0 ./src/main.o
@@ -1457,12 +1470,12 @@ Discarded input sections
  .debug_macro   0x00000000     0xecad ./src/main.o
  .debug_macro   0x00000000      0xa19 ./src/main.o
  .debug_macro   0x00000000       0x28 ./src/main.o
- .debug_macro   0x00000000       0x3a ./src/main.o
- .debug_macro   0x00000000       0x1c ./src/main.o
- .debug_macro   0x00000000     0x275f ./src/main.o
- .debug_macro   0x00000000       0xb8 ./src/main.o
+ .debug_macro   0x00000000       0x4c ./src/main.o
+ .debug_macro   0x00000000       0x34 ./src/main.o
+ .debug_macro   0x00000000       0xa6 ./src/main.o
+ .debug_macro   0x00000000       0x28 ./src/main.o
  .debug_macro   0x00000000       0x5e ./src/main.o
- .debug_macro   0x00000000       0x70 ./src/main.o
+ .debug_macro   0x00000000       0x64 ./src/main.o
  .debug_macro   0x00000000      0x54d ./src/main.o
  .debug_macro   0x00000000      0x1ab ./src/main.o
  .debug_macro   0x00000000       0x28 ./src/main.o
@@ -2500,7 +2513,7 @@ LOAD C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu/
  .FlashConfig   0x00000400       0x10 ./Project_Settings/Startup_Code/startup_S32K144.o
                 0x00000410                . = ALIGN (0x4)
 
-.text           0x00000410     0x425c
+.text           0x00000410     0x3514
                 0x00000410                . = ALIGN (0x4)
  *(.text)
  .text          0x00000410       0x44 ./Project_Settings/Startup_Code/startup_S32K144.o
@@ -2681,258 +2694,234 @@ LOAD C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu/
                 0x00000f24       0x4c ./src/MCAL/LPUART_Core.o
                 0x00000f24                LPUart1_Init
  .text.LPUart1_TransmitString
-                0x00000f70       0x98 ./src/MCAL/LPUART_Core.o
+                0x00000f70       0x9c ./src/MCAL/LPUART_Core.o
                 0x00000f70                LPUart1_TransmitString
  .text.LPUART1_RxTx_IRQHandler
-                0x00001008       0xec ./src/MCAL/LPUART_Core.o
-                0x00001008                LPUART1_RxTx_IRQHandler
+                0x0000100c       0xec ./src/MCAL/LPUART_Core.o
+                0x0000100c                LPUART1_RxTx_IRQHandler
  .text.NVIC_init_IRQs
-                0x000010f4       0xa0 ./src/MCAL/NVIC_Core.o
-                0x000010f4                NVIC_init_IRQs
+                0x000010f8       0x9c ./src/MCAL/NVIC_Core.o
+                0x000010f8                NVIC_init_IRQs
+ .text.PORT_EnableClocks
+                0x00001194       0x40 ./src/MCAL/PORT_Core.o
  .text.Port_Init
-                0x00001194       0x1c ./src/MCAL/PORT_Core.o
-                0x00001194                Port_Init
- .text.Port_Clear_PortA
-                0x000011b0       0xd0 ./src/MCAL/PORT_Core.o
-                0x000011b0                Port_Clear_PortA
- .text.Port_Initialize_PortA
-                0x00001280      0x2a8 ./src/MCAL/PORT_Core.o
-                0x00001280                Port_Initialize_PortA
- .text.Port_Clear_PortB
-                0x00001528       0xc4 ./src/MCAL/PORT_Core.o
-                0x00001528                Port_Clear_PortB
- .text.Port_Initialize_PortB
-                0x000015ec      0x2a8 ./src/MCAL/PORT_Core.o
-                0x000015ec                Port_Initialize_PortB
- .text.Port_Clear_PortC
-                0x00001894       0xcc ./src/MCAL/PORT_Core.o
-                0x00001894                Port_Clear_PortC
- .text.Port_Initialize_PortC
-                0x00001960      0x174 ./src/MCAL/PORT_Core.o
-                0x00001960                Port_Initialize_PortC
- .text.Port_Clear_PortD
-                0x00001ad4       0xcc ./src/MCAL/PORT_Core.o
-                0x00001ad4                Port_Clear_PortD
- .text.Port_Initialize_PortD
-                0x00001ba0      0x188 ./src/MCAL/PORT_Core.o
-                0x00001ba0                Port_Initialize_PortD
- .text.Port_Clear_PortE
-                0x00001d28       0xd0 ./src/MCAL/PORT_Core.o
-                0x00001d28                Port_Clear_PortE
- .text.Port_Initialize_PortE
-                0x00001df8      0x2a8 ./src/MCAL/PORT_Core.o
-                0x00001df8                Port_Initialize_PortE
+                0x000011d4       0xe8 ./src/MCAL/PORT_Core.o
+                0x000011d4                Port_Init
  .text.PORTC_IRQHandler
-                0x000020a0       0x3c ./src/MCAL/PORT_Core.o
-                0x000020a0                PORTC_IRQHandler
+                0x000012bc       0x44 ./src/MCAL/PORT_Core.o
+                0x000012bc                PORTC_IRQHandler
  .text.WDOG_Init
-                0x000020dc       0x54 ./src/MCAL/WDOG_Core.o
-                0x000020dc                WDOG_Init
+                0x00001300       0x54 ./src/MCAL/WDOG_Core.o
+                0x00001300                WDOG_Init
  .text.WDOG_Refresh
-                0x00002130       0x20 ./src/MCAL/WDOG_Core.o
-                0x00002130                WDOG_Refresh
+                0x00001354       0x20 ./src/MCAL/WDOG_Core.o
+                0x00001354                WDOG_Refresh
  .text.pvPortMalloc
-                0x00002150      0x164 ./src/MDLW/heap_4.o
-                0x00002150                pvPortMalloc
+                0x00001374      0x164 ./src/MDLW/heap_4.o
+                0x00001374                pvPortMalloc
  .text.vPortFree
-                0x000022b4       0x70 ./src/MDLW/heap_4.o
-                0x000022b4                vPortFree
+                0x000014d8       0x70 ./src/MDLW/heap_4.o
+                0x000014d8                vPortFree
  .text.prvHeapInit
-                0x00002324       0xb4 ./src/MDLW/heap_4.o
+                0x00001548       0xb4 ./src/MDLW/heap_4.o
  .text.prvInsertBlockIntoFreeList
-                0x000023d8       0xb0 ./src/MDLW/heap_4.o
+                0x000015fc       0xb0 ./src/MDLW/heap_4.o
  .text.vListInitialise
-                0x00002488       0x40 ./src/MDLW/list.o
-                0x00002488                vListInitialise
+                0x000016ac       0x40 ./src/MDLW/list.o
+                0x000016ac                vListInitialise
  .text.vListInitialiseItem
-                0x000024c8       0x18 ./src/MDLW/list.o
-                0x000024c8                vListInitialiseItem
+                0x000016ec       0x18 ./src/MDLW/list.o
+                0x000016ec                vListInitialiseItem
  .text.vListInsert
-                0x000024e0       0x70 ./src/MDLW/list.o
-                0x000024e0                vListInsert
+                0x00001704       0x70 ./src/MDLW/list.o
+                0x00001704                vListInsert
  .text.uxListRemove
-                0x00002550       0x54 ./src/MDLW/list.o
-                0x00002550                uxListRemove
+                0x00001774       0x54 ./src/MDLW/list.o
+                0x00001774                uxListRemove
  .text.pxPortInitialiseStack
-                0x000025a4       0x68 ./src/MDLW/port.o
-                0x000025a4                pxPortInitialiseStack
+                0x000017c8       0x68 ./src/MDLW/port.o
+                0x000017c8                pxPortInitialiseStack
  .text.prvTaskExitError
-                0x0000260c       0x30 ./src/MDLW/port.o
- *fill*         0x0000263c        0x4 
+                0x00001830       0x30 ./src/MDLW/port.o
  .text.SVC_Handler
-                0x00002640       0x24 ./src/MDLW/port.o
-                0x00002640                SVC_Handler
+                0x00001860       0x24 ./src/MDLW/port.o
+                0x00001860                SVC_Handler
  .text.prvPortStartFirstTask
-                0x00002664       0x28 ./src/MDLW/port.o
+                0x00001884       0x28 ./src/MDLW/port.o
  .text.xPortStartScheduler
-                0x0000268c       0x70 ./src/MDLW/port.o
-                0x0000268c                xPortStartScheduler
+                0x000018ac       0x70 ./src/MDLW/port.o
+                0x000018ac                xPortStartScheduler
  .text.vPortEnterCritical
-                0x000026fc       0x30 ./src/MDLW/port.o
-                0x000026fc                vPortEnterCritical
+                0x0000191c       0x30 ./src/MDLW/port.o
+                0x0000191c                vPortEnterCritical
  .text.vPortExitCritical
-                0x0000272c       0x30 ./src/MDLW/port.o
-                0x0000272c                vPortExitCritical
- *fill*         0x0000275c        0x4 
+                0x0000194c       0x30 ./src/MDLW/port.o
+                0x0000194c                vPortExitCritical
+ *fill*         0x0000197c        0x4 
  .text.PendSV_Handler
-                0x00002760       0x64 ./src/MDLW/port.o
-                0x00002760                PendSV_Handler
+                0x00001980       0x64 ./src/MDLW/port.o
+                0x00001980                PendSV_Handler
  .text.SysTick_Handler
-                0x000027c4       0x40 ./src/MDLW/port.o
-                0x000027c4                SysTick_Handler
+                0x000019e4       0x40 ./src/MDLW/port.o
+                0x000019e4                SysTick_Handler
  .text.vPortSetupTimerInterrupt
-                0x00002804       0x34 ./src/MDLW/port.o
-                0x00002804                vPortSetupTimerInterrupt
+                0x00001a24       0x34 ./src/MDLW/port.o
+                0x00001a24                vPortSetupTimerInterrupt
  .text.vPortEnableVFP
-                0x00002838       0x14 ./src/MDLW/port.o
+                0x00001a58       0x14 ./src/MDLW/port.o
  .text.xQueueGenericReset
-                0x0000284c       0xe0 ./src/MDLW/queue.o
-                0x0000284c                xQueueGenericReset
+                0x00001a6c       0xe0 ./src/MDLW/queue.o
+                0x00001a6c                xQueueGenericReset
  .text.xQueueGenericCreate
-                0x0000292c       0x78 ./src/MDLW/queue.o
-                0x0000292c                xQueueGenericCreate
+                0x00001b4c       0x78 ./src/MDLW/queue.o
+                0x00001b4c                xQueueGenericCreate
  .text.prvInitialiseNewQueue
-                0x000029a4       0x4c ./src/MDLW/queue.o
+                0x00001bc4       0x4c ./src/MDLW/queue.o
  .text.xQueueReceive
-                0x000029f0      0x14c ./src/MDLW/queue.o
-                0x000029f0                xQueueReceive
+                0x00001c10      0x14c ./src/MDLW/queue.o
+                0x00001c10                xQueueReceive
  .text.prvCopyDataToQueue
-                0x00002b3c       0xd8 ./src/MDLW/queue.o
+                0x00001d5c       0xd8 ./src/MDLW/queue.o
  .text.prvCopyDataFromQueue
-                0x00002c14       0x4c ./src/MDLW/queue.o
+                0x00001e34       0x4c ./src/MDLW/queue.o
  .text.prvUnlockQueue
-                0x00002c60       0xbc ./src/MDLW/queue.o
+                0x00001e80       0xbc ./src/MDLW/queue.o
  .text.prvIsQueueEmpty
-                0x00002d1c       0x2c ./src/MDLW/queue.o
+                0x00001f3c       0x2c ./src/MDLW/queue.o
  .text.vQueueAddToRegistry
-                0x00002d48       0x80 ./src/MDLW/queue.o
-                0x00002d48                vQueueAddToRegistry
+                0x00001f68       0x80 ./src/MDLW/queue.o
+                0x00001f68                vQueueAddToRegistry
  .text.vQueueWaitForMessageRestricted
-                0x00002dc8       0x6c ./src/MDLW/queue.o
-                0x00002dc8                vQueueWaitForMessageRestricted
+                0x00001fe8       0x6c ./src/MDLW/queue.o
+                0x00001fe8                vQueueWaitForMessageRestricted
  .text.prvNotifyQueueSetContainer
-                0x00002e34       0x88 ./src/MDLW/queue.o
+                0x00002054       0x88 ./src/MDLW/queue.o
  .text.prvCreateTask
-                0x00002ebc       0x78 ./src/MDLW/tasks.o
+                0x000020dc       0x78 ./src/MDLW/tasks.o
  .text.xTaskCreate
-                0x00002f34       0x48 ./src/MDLW/tasks.o
-                0x00002f34                xTaskCreate
+                0x00002154       0x48 ./src/MDLW/tasks.o
+                0x00002154                xTaskCreate
  .text.prvInitialiseNewTask
-                0x00002f7c       0xe0 ./src/MDLW/tasks.o
+                0x0000219c       0xe0 ./src/MDLW/tasks.o
  .text.prvAddNewTaskToReadyList
-                0x0000305c      0x130 ./src/MDLW/tasks.o
+                0x0000227c      0x130 ./src/MDLW/tasks.o
  .text.xTaskDelayUntil
-                0x0000318c       0xa4 ./src/MDLW/tasks.o
-                0x0000318c                xTaskDelayUntil
+                0x000023ac       0xa4 ./src/MDLW/tasks.o
+                0x000023ac                xTaskDelayUntil
  .text.prvCreateIdleTasks
-                0x00003230       0x90 ./src/MDLW/tasks.o
+                0x00002450       0x90 ./src/MDLW/tasks.o
  .text.vTaskStartScheduler
-                0x000032c0       0x64 ./src/MDLW/tasks.o
-                0x000032c0                vTaskStartScheduler
+                0x000024e0       0x64 ./src/MDLW/tasks.o
+                0x000024e0                vTaskStartScheduler
  .text.vTaskSuspendAll
-                0x00003324       0x1c ./src/MDLW/tasks.o
-                0x00003324                vTaskSuspendAll
+                0x00002544       0x1c ./src/MDLW/tasks.o
+                0x00002544                vTaskSuspendAll
  .text.xTaskResumeAll
-                0x00003340      0x1f4 ./src/MDLW/tasks.o
-                0x00003340                xTaskResumeAll
+                0x00002560      0x1f4 ./src/MDLW/tasks.o
+                0x00002560                xTaskResumeAll
  .text.xTaskGetTickCount
-                0x00003534       0x20 ./src/MDLW/tasks.o
-                0x00003534                xTaskGetTickCount
+                0x00002754       0x20 ./src/MDLW/tasks.o
+                0x00002754                xTaskGetTickCount
  .text.uxTaskGetNumberOfTasks
-                0x00003554       0x18 ./src/MDLW/tasks.o
-                0x00003554                uxTaskGetNumberOfTasks
+                0x00002774       0x18 ./src/MDLW/tasks.o
+                0x00002774                uxTaskGetNumberOfTasks
  .text.xTaskIncrementTick
-                0x0000356c      0x210 ./src/MDLW/tasks.o
-                0x0000356c                xTaskIncrementTick
+                0x0000278c      0x210 ./src/MDLW/tasks.o
+                0x0000278c                xTaskIncrementTick
  .text.vTaskSwitchContext
-                0x0000377c       0xd8 ./src/MDLW/tasks.o
-                0x0000377c                vTaskSwitchContext
+                0x0000299c       0xd8 ./src/MDLW/tasks.o
+                0x0000299c                vTaskSwitchContext
  .text.vTaskPlaceOnEventList
-                0x00003854       0x2c ./src/MDLW/tasks.o
-                0x00003854                vTaskPlaceOnEventList
+                0x00002a74       0x2c ./src/MDLW/tasks.o
+                0x00002a74                vTaskPlaceOnEventList
  .text.vTaskPlaceOnEventListRestricted
-                0x00003880       0x6c ./src/MDLW/tasks.o
-                0x00003880                vTaskPlaceOnEventListRestricted
+                0x00002aa0       0x6c ./src/MDLW/tasks.o
+                0x00002aa0                vTaskPlaceOnEventListRestricted
  .text.xTaskRemoveFromEventList
-                0x000038ec      0x198 ./src/MDLW/tasks.o
-                0x000038ec                xTaskRemoveFromEventList
+                0x00002b0c      0x198 ./src/MDLW/tasks.o
+                0x00002b0c                xTaskRemoveFromEventList
  .text.vTaskInternalSetTimeOutState
-                0x00003a84       0x2c ./src/MDLW/tasks.o
-                0x00003a84                vTaskInternalSetTimeOutState
+                0x00002ca4       0x2c ./src/MDLW/tasks.o
+                0x00002ca4                vTaskInternalSetTimeOutState
  .text.xTaskCheckForTimeOut
-                0x00003ab0       0x94 ./src/MDLW/tasks.o
-                0x00003ab0                xTaskCheckForTimeOut
+                0x00002cd0       0x94 ./src/MDLW/tasks.o
+                0x00002cd0                xTaskCheckForTimeOut
  .text.vTaskMissedYield
-                0x00003b44       0x18 ./src/MDLW/tasks.o
-                0x00003b44                vTaskMissedYield
+                0x00002d64       0x18 ./src/MDLW/tasks.o
+                0x00002d64                vTaskMissedYield
  .text.prvIdleTask
-                0x00003b5c       0x30 ./src/MDLW/tasks.o
+                0x00002d7c       0x30 ./src/MDLW/tasks.o
  .text.prvInitialiseTaskLists
-                0x00003b8c       0x7c ./src/MDLW/tasks.o
+                0x00002dac       0x7c ./src/MDLW/tasks.o
  .text.prvCheckTasksWaitingTermination
-                0x00003c08       0x58 ./src/MDLW/tasks.o
+                0x00002e28       0x58 ./src/MDLW/tasks.o
  .text.prvDeleteTCB
-                0x00003c60       0x20 ./src/MDLW/tasks.o
+                0x00002e80       0x20 ./src/MDLW/tasks.o
  .text.prvResetNextTaskUnblockTime
-                0x00003c80       0x34 ./src/MDLW/tasks.o
+                0x00002ea0       0x34 ./src/MDLW/tasks.o
  .text.xTaskPriorityDisinherit
-                0x00003cb4      0x108 ./src/MDLW/tasks.o
-                0x00003cb4                xTaskPriorityDisinherit
+                0x00002ed4      0x108 ./src/MDLW/tasks.o
+                0x00002ed4                xTaskPriorityDisinherit
  .text.prvAddCurrentTaskToDelayedList
-                0x00003dbc      0x100 ./src/MDLW/tasks.o
+                0x00002fdc      0x100 ./src/MDLW/tasks.o
  .text.xTimerCreateTimerTask
-                0x00003ebc       0x48 ./src/MDLW/timers.o
-                0x00003ebc                xTimerCreateTimerTask
+                0x000030dc       0x48 ./src/MDLW/timers.o
+                0x000030dc                xTimerCreateTimerTask
  .text.prvReloadTimer
-                0x00003f04       0x40 ./src/MDLW/timers.o
+                0x00003124       0x40 ./src/MDLW/timers.o
  .text.prvProcessExpiredTimer
-                0x00003f44       0x5c ./src/MDLW/timers.o
+                0x00003164       0x5c ./src/MDLW/timers.o
  .text.prvTimerTask
-                0x00003fa0       0x24 ./src/MDLW/timers.o
+                0x000031c0       0x24 ./src/MDLW/timers.o
  .text.prvProcessTimerOrBlockTask
-                0x00003fc4       0x9c ./src/MDLW/timers.o
+                0x000031e4       0x9c ./src/MDLW/timers.o
  .text.prvGetNextExpireTime
-                0x00004060       0x48 ./src/MDLW/timers.o
+                0x00003280       0x48 ./src/MDLW/timers.o
  .text.prvSampleTimeNow
-                0x000040a8       0x40 ./src/MDLW/timers.o
+                0x000032c8       0x40 ./src/MDLW/timers.o
  .text.prvInsertTimerInActiveList
-                0x000040e8       0x84 ./src/MDLW/timers.o
+                0x00003308       0x84 ./src/MDLW/timers.o
  .text.prvProcessReceivedCommands
-                0x0000416c      0x174 ./src/MDLW/timers.o
+                0x0000338c      0x174 ./src/MDLW/timers.o
  .text.prvSwitchTimerLists
-                0x000042e0       0x48 ./src/MDLW/timers.o
+                0x00003500       0x48 ./src/MDLW/timers.o
  .text.prvCheckForValidListAndQueue
-                0x00004328       0x6c ./src/MDLW/timers.o
+                0x00003548       0x6c ./src/MDLW/timers.o
  .text.SOSC_init_8MHz
-                0x00004394       0x4c ./src/main.o
+                0x000035b4       0x4c ./src/main.o
  .text.SPLL_init_160MHz
-                0x000043e0       0x80 ./src/main.o
+                0x00003600       0x80 ./src/main.o
  .text.NormalRUNmode_80MHz
-                0x00004460       0x34 ./src/main.o
+                0x00003680       0x34 ./src/main.o
  .text.vApplicationStackOverflowHook
-                0x00004494       0x10 ./src/main.o
-                0x00004494                vApplicationStackOverflowHook
+                0x000036b4       0x10 ./src/main.o
+                0x000036b4                vApplicationStackOverflowHook
  .text.vApplicationMallocFailedHook
-                0x000044a4        0x8 ./src/main.o
-                0x000044a4                vApplicationMallocFailedHook
+                0x000036c4        0x8 ./src/main.o
+                0x000036c4                vApplicationMallocFailedHook
  .text.vTask_WdogRefresh
-                0x000044ac       0x28 ./src/main.o
- .text.main     0x000044d4       0xa8 ./src/main.o
-                0x000044d4                main
- .text.memcpy   0x0000457c       0x16 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memcpy.o)
-                0x0000457c                memcpy
- .text.memset   0x00004592        0xc C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memset.o)
-                0x00004592                memset
+                0x000036cc       0x28 ./src/main.o
+ .text.main     0x000036f4       0xa8 ./src/main.o
+                0x000036f4                main
+ .text.memcpy   0x0000379c       0x16 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memcpy.o)
+                0x0000379c                memcpy
+ .text.memset   0x000037b2        0xc C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memset.o)
+                0x000037b2                memset
  .text.__fill_mem
-                0x0000459e       0x7a C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(__filll_mem.o)
-                0x0000459e                __fill_mem
+                0x000037be       0x7a C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(__filll_mem.o)
+                0x000037be                __fill_mem
  *(.rodata)
- .rodata        0x00004618       0x17 ./src/MDLW/tasks.o
- *fill*         0x0000462f        0x1 
- .rodata        0x00004630        0xd ./src/MDLW/timers.o
- *fill*         0x0000463d        0x3 
- .rodata        0x00004640       0x2b ./src/main.o
+ .rodata        0x00003838       0x17 ./src/MDLW/tasks.o
+ *fill*         0x0000384f        0x1 
+ .rodata        0x00003850        0xd ./src/MDLW/timers.o
+ *fill*         0x0000385d        0x3 
+ .rodata        0x00003860       0x2b ./src/main.o
  *(.rodata*)
+ *fill*         0x0000388b        0x1 
+ .rodata.gkastNvicIrqCfg
+                0x0000388c        0xc ./src/MCAL/NVIC_Core.o
+ .rodata.gkastPortPinCfg
+                0x00003898       0x8c ./src/MCAL/PORT_Core.o
  *(.glue_7)
  .glue_7        0x00000000        0x0 linker stubs
  *(.glue_7t)
@@ -2940,65 +2929,64 @@ LOAD C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu/
  *(.eh_frame)
  *(.init)
  *(.fini)
-                0x0000466c                . = ALIGN (0x4)
- *fill*         0x0000466b        0x1 
+                0x00003924                . = ALIGN (0x4)
 
-.vfp11_veneer   0x0000466c        0x0
+.vfp11_veneer   0x00003924        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x0000466c        0x0
+.v4_bx          0x00003924        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x0000466c        0x0
+.iplt           0x00003924        0x0
  .iplt          0x00000000        0x0 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu/__arm_start.o
 
-.rel.dyn        0x0000466c        0x0
+.rel.dyn        0x00003924        0x0
  .rel.iplt      0x00000000        0x0 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu/__arm_start.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x0000466c        0x0
-                0x0000466c                __exidx_start = .
+.ARM            0x00003924        0x0
+                0x00003924                __exidx_start = .
  *(.ARM.exidx*)
-                0x0000466c                __exidx_end = .
+                0x00003924                __exidx_end = .
 
-.ctors          0x0000466c        0x0
-                0x0000466c                __CTOR_LIST__ = .
+.ctors          0x00003924        0x0
+                0x00003924                __CTOR_LIST__ = .
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
  *(SORT(.ctors.*))
  *(.ctors)
-                0x0000466c                __CTOR_END__ = .
+                0x00003924                __CTOR_END__ = .
 
-.dtors          0x0000466c        0x0
-                0x0000466c                __DTOR_LIST__ = .
+.dtors          0x00003924        0x0
+                0x00003924                __DTOR_LIST__ = .
  *crtbegin.o(.dtors)
  *crtbegin?.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .dtors)
  *(SORT(.dtors.*))
  *(.dtors)
-                0x0000466c                __DTOR_END__ = .
+                0x00003924                __DTOR_END__ = .
 
-.preinit_array  0x0000466c        0x0
-                0x0000466c                PROVIDE (__preinit_array_start, .)
+.preinit_array  0x00003924        0x0
+                0x00003924                PROVIDE (__preinit_array_start, .)
  *(.preinit_array*)
-                0x0000466c                PROVIDE (__preinit_array_end, .)
+                0x00003924                PROVIDE (__preinit_array_end, .)
 
-.init_array     0x0000466c        0x0
-                0x0000466c                PROVIDE (__init_array_start, .)
+.init_array     0x00003924        0x0
+                0x00003924                PROVIDE (__init_array_start, .)
  *(SORT(.init_array.*))
  *(.init_array*)
-                0x0000466c                PROVIDE (__init_array_end, .)
+                0x00003924                PROVIDE (__init_array_end, .)
 
-.fini_array     0x0000466c        0x0
-                0x0000466c                PROVIDE (__fini_array_start, .)
+.fini_array     0x00003924        0x0
+                0x00003924                PROVIDE (__fini_array_start, .)
  *(SORT(.fini_array.*))
  *(.fini_array*)
-                0x0000466c                PROVIDE (__fini_array_end, .)
-                0x0000466c                __etext = .
-                0x0000466c                __DATA_ROM = .
+                0x00003924                PROVIDE (__fini_array_end, .)
+                0x00003924                __etext = .
+                0x00003924                __DATA_ROM = .
 
 .interrupts_ram
                 0x1fff8000      0x400
@@ -3013,15 +3001,14 @@ LOAD C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu/
                 0x1fff8000                __VECTOR_RAM = DEFINED (__flash_vector_table__)?ORIGIN (m_interrupts):__VECTOR_RAM__
                 0x00000400                __RAM_VECTOR_TABLE_SIZE = DEFINED (__flash_vector_table__)?0x0:(__interrupts_ram_end__ - __interrupts_ram_start__)
 
-.data           0x1fff8400        0xc load address 0x0000466c
+.data           0x1fff8400        0xc load address 0x00003924
                 0x1fff8400                . = ALIGN (0x4)
                 0x1fff8400                __DATA_RAM = .
                 0x1fff8400                __data_start__ = .
  *(.data)
  *(.data*)
- .data.bTxStatusFlag
+ .data.gu8TxStatusFlag
                 0x1fff8400        0x1 ./src/MCAL/LPUART_Core.o
-                0x1fff8400                bTxStatusFlag
  *fill*         0x1fff8401        0x3 
  .data.uxCriticalNesting
                 0x1fff8404        0x4 ./src/MDLW/port.o
@@ -3030,20 +3017,20 @@ LOAD C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu/
  *(.jcr*)
                 0x1fff840c                . = ALIGN (0x4)
                 0x1fff840c                __data_end__ = .
-                0x00004678                __DATA_END = (__DATA_ROM + (__data_end__ - __data_start__))
-                0x00004678                __CODE_ROM = __DATA_END
+                0x00003930                __DATA_END = (__DATA_ROM + (__data_end__ - __data_start__))
+                0x00003930                __CODE_ROM = __DATA_END
 
-.igot.plt       0x1fff840c        0x0 load address 0x00004678
+.igot.plt       0x1fff840c        0x0 load address 0x00003930
  .igot.plt      0x00000000        0x0 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu/__arm_start.o
 
-.code           0x1fff840c        0x0 load address 0x00004678
+.code           0x1fff840c        0x0 load address 0x00003930
                 0x1fff840c                . = ALIGN (0x4)
                 0x1fff840c                __CODE_RAM = .
                 0x1fff840c                __code_start__ = .
  *(.code_ram)
                 0x1fff840c                . = ALIGN (0x4)
                 0x1fff840c                __code_end__ = .
-                0x00004678                __CODE_END = (__CODE_ROM + (__code_end__ - __code_start__))
+                0x00003930                __CODE_END = (__CODE_ROM + (__code_end__ - __code_start__))
 
 .customSectionBlock
  *(.customSection)
@@ -3211,51 +3198,51 @@ LOAD C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu/
                 0x00000001                ASSERT ((__StackLimit >= __HeapLimit), region m_data_2 overflowed with stack and heap)
 OUTPUT(S32K144_Driver.elf elf32-littlearm)
 
-.debug_info     0x00000000     0x76fc
+.debug_info     0x00000000     0x8649
  .debug_info    0x00000000      0x41d ./Project_Settings/Startup_Code/startup.o
  .debug_info    0x0000041d       0x77 ./Project_Settings/Startup_Code/startup_S32K144.o
  .debug_info    0x00000494      0x500 ./Project_Settings/Startup_Code/system_S32K144.o
- .debug_info    0x00000994      0x665 ./src/APPL/KIT_Appl.o
- .debug_info    0x00000ff9      0x2d4 ./src/MCAL/ADC_Core.o
- .debug_info    0x000012cd      0x486 ./src/MCAL/FTMn_Core.o
- .debug_info    0x00001753      0x31b ./src/MCAL/LPUART_Core.o
- .debug_info    0x00001a6e      0x46b ./src/MCAL/NVIC_Core.o
- .debug_info    0x00001ed9      0x2fe ./src/MCAL/PORT_Core.o
- .debug_info    0x000021d7      0x123 ./src/MCAL/WDOG_Core.o
- .debug_info    0x000022fa      0x43b ./src/MDLW/heap_4.o
- .debug_info    0x00002735      0x298 ./src/MDLW/list.o
- .debug_info    0x000029cd      0x328 ./src/MDLW/port.o
- .debug_info    0x00002cf5     0x1452 ./src/MDLW/queue.o
- .debug_info    0x00004147     0x2426 ./src/MDLW/tasks.o
- .debug_info    0x0000656d      0xb0c ./src/MDLW/timers.o
- .debug_info    0x00007079      0x34f ./src/main.o
- .debug_info    0x000073c8      0x111 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memcpy.o)
- .debug_info    0x000074d9       0xec C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memset.o)
- .debug_info    0x000075c5      0x137 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(__filll_mem.o)
+ .debug_info    0x00000994      0x809 ./src/APPL/KIT_Appl.o
+ .debug_info    0x0000119d      0x504 ./src/MCAL/ADC_Core.o
+ .debug_info    0x000016a1      0x6a0 ./src/MCAL/FTMn_Core.o
+ .debug_info    0x00001d41      0x52a ./src/MCAL/LPUART_Core.o
+ .debug_info    0x0000226b      0x70c ./src/MCAL/NVIC_Core.o
+ .debug_info    0x00002977      0x35d ./src/MCAL/PORT_Core.o
+ .debug_info    0x00002cd4      0x353 ./src/MCAL/WDOG_Core.o
+ .debug_info    0x00003027      0x43b ./src/MDLW/heap_4.o
+ .debug_info    0x00003462      0x298 ./src/MDLW/list.o
+ .debug_info    0x000036fa      0x328 ./src/MDLW/port.o
+ .debug_info    0x00003a22     0x1452 ./src/MDLW/queue.o
+ .debug_info    0x00004e74     0x2426 ./src/MDLW/tasks.o
+ .debug_info    0x0000729a      0xb0c ./src/MDLW/timers.o
+ .debug_info    0x00007da6      0x56f ./src/main.o
+ .debug_info    0x00008315      0x111 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memcpy.o)
+ .debug_info    0x00008426       0xec C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memset.o)
+ .debug_info    0x00008512      0x137 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(__filll_mem.o)
 
-.debug_abbrev   0x00000000     0x1744
+.debug_abbrev   0x00000000     0x1875
  .debug_abbrev  0x00000000      0x101 ./Project_Settings/Startup_Code/startup.o
  .debug_abbrev  0x00000101       0x14 ./Project_Settings/Startup_Code/startup_S32K144.o
  .debug_abbrev  0x00000115      0x118 ./Project_Settings/Startup_Code/system_S32K144.o
  .debug_abbrev  0x0000022d      0x155 ./src/APPL/KIT_Appl.o
- .debug_abbrev  0x00000382       0xe7 ./src/MCAL/ADC_Core.o
- .debug_abbrev  0x00000469      0x14c ./src/MCAL/FTMn_Core.o
- .debug_abbrev  0x000005b5      0x16d ./src/MCAL/LPUART_Core.o
- .debug_abbrev  0x00000722       0xd1 ./src/MCAL/NVIC_Core.o
- .debug_abbrev  0x000007f3       0xff ./src/MCAL/PORT_Core.o
- .debug_abbrev  0x000008f2       0xba ./src/MCAL/WDOG_Core.o
- .debug_abbrev  0x000009ac      0x175 ./src/MDLW/heap_4.o
- .debug_abbrev  0x00000b21       0xbf ./src/MDLW/list.o
- .debug_abbrev  0x00000be0      0x1c1 ./src/MDLW/port.o
- .debug_abbrev  0x00000da1      0x237 ./src/MDLW/queue.o
- .debug_abbrev  0x00000fd8      0x2aa ./src/MDLW/tasks.o
- .debug_abbrev  0x00001282      0x1f8 ./src/MDLW/timers.o
- .debug_abbrev  0x0000147a      0x15b ./src/main.o
- .debug_abbrev  0x000015d5       0x95 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memcpy.o)
- .debug_abbrev  0x0000166a       0x62 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memset.o)
- .debug_abbrev  0x000016cc       0x78 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(__filll_mem.o)
+ .debug_abbrev  0x00000382      0x11b ./src/MCAL/ADC_Core.o
+ .debug_abbrev  0x0000049d      0x16f ./src/MCAL/FTMn_Core.o
+ .debug_abbrev  0x0000060c      0x16b ./src/MCAL/LPUART_Core.o
+ .debug_abbrev  0x00000777      0x12a ./src/MCAL/NVIC_Core.o
+ .debug_abbrev  0x000008a1      0x11b ./src/MCAL/PORT_Core.o
+ .debug_abbrev  0x000009bc       0xf8 ./src/MCAL/WDOG_Core.o
+ .debug_abbrev  0x00000ab4      0x175 ./src/MDLW/heap_4.o
+ .debug_abbrev  0x00000c29       0xbf ./src/MDLW/list.o
+ .debug_abbrev  0x00000ce8      0x1c1 ./src/MDLW/port.o
+ .debug_abbrev  0x00000ea9      0x237 ./src/MDLW/queue.o
+ .debug_abbrev  0x000010e0      0x2aa ./src/MDLW/tasks.o
+ .debug_abbrev  0x0000138a      0x1f8 ./src/MDLW/timers.o
+ .debug_abbrev  0x00001582      0x184 ./src/main.o
+ .debug_abbrev  0x00001706       0x95 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memcpy.o)
+ .debug_abbrev  0x0000179b       0x62 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memset.o)
+ .debug_abbrev  0x000017fd       0x78 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(__filll_mem.o)
 
-.debug_aranges  0x00000000      0x8f8
+.debug_aranges  0x00000000      0x8b0
  .debug_aranges
                 0x00000000       0x20 ./Project_Settings/Startup_Code/startup.o
  .debug_aranges
@@ -3273,31 +3260,31 @@ OUTPUT(S32K144_Driver.elf elf32-littlearm)
  .debug_aranges
                 0x00000198       0x20 ./src/MCAL/NVIC_Core.o
  .debug_aranges
-                0x000001b8       0x78 ./src/MCAL/PORT_Core.o
+                0x000001b8       0x30 ./src/MCAL/PORT_Core.o
  .debug_aranges
-                0x00000230       0x28 ./src/MCAL/WDOG_Core.o
+                0x000001e8       0x28 ./src/MCAL/WDOG_Core.o
  .debug_aranges
-                0x00000258       0x68 ./src/MDLW/heap_4.o
+                0x00000210       0x68 ./src/MDLW/heap_4.o
  .debug_aranges
-                0x000002c0       0x40 ./src/MDLW/list.o
+                0x00000278       0x40 ./src/MDLW/list.o
  .debug_aranges
-                0x00000300       0x78 ./src/MDLW/port.o
+                0x000002b8       0x78 ./src/MDLW/port.o
  .debug_aranges
-                0x00000378      0x170 ./src/MDLW/queue.o
+                0x00000330      0x170 ./src/MDLW/queue.o
  .debug_aranges
-                0x000004e8      0x268 ./src/MDLW/tasks.o
+                0x000004a0      0x268 ./src/MDLW/tasks.o
  .debug_aranges
-                0x00000750       0xf8 ./src/MDLW/timers.o
+                0x00000708       0xf8 ./src/MDLW/timers.o
  .debug_aranges
-                0x00000848       0x50 ./src/main.o
+                0x00000800       0x50 ./src/main.o
  .debug_aranges
-                0x00000898       0x20 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memcpy.o)
+                0x00000850       0x20 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memcpy.o)
  .debug_aranges
-                0x000008b8       0x20 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memset.o)
+                0x00000870       0x20 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memset.o)
  .debug_aranges
-                0x000008d8       0x20 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(__filll_mem.o)
+                0x00000890       0x20 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(__filll_mem.o)
 
-.debug_ranges   0x00000000      0x778
+.debug_ranges   0x00000000      0x730
  .debug_ranges  0x00000000       0x10 ./Project_Settings/Startup_Code/startup.o
  .debug_ranges  0x00000010       0x20 ./Project_Settings/Startup_Code/system_S32K144.o
  .debug_ranges  0x00000030       0x30 ./src/APPL/KIT_Appl.o
@@ -3305,17 +3292,17 @@ OUTPUT(S32K144_Driver.elf elf32-littlearm)
  .debug_ranges  0x00000090       0x58 ./src/MCAL/FTMn_Core.o
  .debug_ranges  0x000000e8       0x30 ./src/MCAL/LPUART_Core.o
  .debug_ranges  0x00000118       0x10 ./src/MCAL/NVIC_Core.o
- .debug_ranges  0x00000128       0x68 ./src/MCAL/PORT_Core.o
- .debug_ranges  0x00000190       0x18 ./src/MCAL/WDOG_Core.o
- .debug_ranges  0x000001a8       0x58 ./src/MDLW/heap_4.o
- .debug_ranges  0x00000200       0x30 ./src/MDLW/list.o
- .debug_ranges  0x00000230       0x68 ./src/MDLW/port.o
- .debug_ranges  0x00000298      0x160 ./src/MDLW/queue.o
- .debug_ranges  0x000003f8      0x258 ./src/MDLW/tasks.o
- .debug_ranges  0x00000650       0xe8 ./src/MDLW/timers.o
- .debug_ranges  0x00000738       0x40 ./src/main.o
+ .debug_ranges  0x00000128       0x20 ./src/MCAL/PORT_Core.o
+ .debug_ranges  0x00000148       0x18 ./src/MCAL/WDOG_Core.o
+ .debug_ranges  0x00000160       0x58 ./src/MDLW/heap_4.o
+ .debug_ranges  0x000001b8       0x30 ./src/MDLW/list.o
+ .debug_ranges  0x000001e8       0x68 ./src/MDLW/port.o
+ .debug_ranges  0x00000250      0x160 ./src/MDLW/queue.o
+ .debug_ranges  0x000003b0      0x258 ./src/MDLW/tasks.o
+ .debug_ranges  0x00000608       0xe8 ./src/MDLW/timers.o
+ .debug_ranges  0x000006f0       0x40 ./src/main.o
 
-.debug_macro    0x00000000    0x17769
+.debug_macro    0x00000000    0x15088
  .debug_macro   0x00000000       0xea ./Project_Settings/Startup_Code/startup.o
  .debug_macro   0x000000ea      0x86e ./Project_Settings/Startup_Code/startup.o
  .debug_macro   0x00000958       0x52 ./Project_Settings/Startup_Code/startup.o
@@ -3337,120 +3324,120 @@ OUTPUT(S32K144_Driver.elf elf32-littlearm)
  .debug_macro   0x00010774       0x22 ./Project_Settings/Startup_Code/startup.o
  .debug_macro   0x00010796       0xe9 ./Project_Settings/Startup_Code/system_S32K144.o
  .debug_macro   0x0001087f       0x28 ./Project_Settings/Startup_Code/system_S32K144.o
- .debug_macro   0x000108a7      0x2aa ./src/APPL/KIT_Appl.o
- .debug_macro   0x00010b51       0x7c ./src/APPL/KIT_Appl.o
- .debug_macro   0x00010bcd       0x1c ./src/APPL/KIT_Appl.o
- .debug_macro   0x00010be9       0x3a ./src/APPL/KIT_Appl.o
- .debug_macro   0x00010c23       0x1c ./src/APPL/KIT_Appl.o
- .debug_macro   0x00010c3f     0x275f ./src/APPL/KIT_Appl.o
- .debug_macro   0x0001339e       0xb8 ./src/APPL/KIT_Appl.o
- .debug_macro   0x00013456       0x5e ./src/APPL/KIT_Appl.o
- .debug_macro   0x000134b4       0x70 ./src/APPL/KIT_Appl.o
- .debug_macro   0x00013524      0x54d ./src/APPL/KIT_Appl.o
- .debug_macro   0x00013a71      0x1ab ./src/APPL/KIT_Appl.o
- .debug_macro   0x00013c1c       0x28 ./src/APPL/KIT_Appl.o
- .debug_macro   0x00013c44      0x16e ./src/APPL/KIT_Appl.o
- .debug_macro   0x00013db2      0x2c9 ./src/APPL/KIT_Appl.o
- .debug_macro   0x0001407b      0x196 ./src/APPL/KIT_Appl.o
- .debug_macro   0x00014211      0x314 ./src/APPL/KIT_Appl.o
- .debug_macro   0x00014525       0x16 ./src/APPL/KIT_Appl.o
- .debug_macro   0x0001453b       0x16 ./src/APPL/KIT_Appl.o
- .debug_macro   0x00014551       0x16 ./src/APPL/KIT_Appl.o
- .debug_macro   0x00014567       0x16 ./src/APPL/KIT_Appl.o
- .debug_macro   0x0001457d      0x154 ./src/APPL/KIT_Appl.o
- .debug_macro   0x000146d1       0x1c ./src/APPL/KIT_Appl.o
- .debug_macro   0x000146ed      0x182 ./src/APPL/KIT_Appl.o
- .debug_macro   0x0001486f       0xe7 ./src/APPL/KIT_Appl.o
- .debug_macro   0x00014956       0x2e ./src/APPL/KIT_Appl.o
- .debug_macro   0x00014984       0x1f ./src/APPL/KIT_Appl.o
- .debug_macro   0x000149a3       0x12 ./src/APPL/KIT_Appl.o
- .debug_macro   0x000149b5     0x10b7 ./src/APPL/KIT_Appl.o
- .debug_macro   0x00015a6c       0xc3 ./src/APPL/KIT_Appl.o
- .debug_macro   0x00015b2f      0x14f ./src/APPL/KIT_Appl.o
- .debug_macro   0x00015c7e       0x80 ./src/APPL/KIT_Appl.o
- .debug_macro   0x00015cfe       0x77 ./src/APPL/KIT_Appl.o
- .debug_macro   0x00015d75       0x10 ./src/APPL/KIT_Appl.o
- .debug_macro   0x00015d85      0x19b ./src/MCAL/ADC_Core.o
- .debug_macro   0x00015f20      0x19b ./src/MCAL/FTMn_Core.o
- .debug_macro   0x000160bb      0x19b ./src/MCAL/LPUART_Core.o
- .debug_macro   0x00016256      0x19b ./src/MCAL/NVIC_Core.o
- .debug_macro   0x000163f1      0x19b ./src/MCAL/PORT_Core.o
- .debug_macro   0x0001658c      0x19b ./src/MCAL/WDOG_Core.o
- .debug_macro   0x00016727      0x1f9 ./src/MDLW/heap_4.o
- .debug_macro   0x00016920      0x16f ./src/MDLW/list.o
- .debug_macro   0x00016a8f      0x237 ./src/MDLW/port.o
- .debug_macro   0x00016cc6      0x1fb ./src/MDLW/queue.o
- .debug_macro   0x00016ec1      0x2f2 ./src/MDLW/tasks.o
- .debug_macro   0x000171b3       0x16 ./src/MDLW/tasks.o
- .debug_macro   0x000171c9       0x16 ./src/MDLW/tasks.o
- .debug_macro   0x000171df       0x8b ./src/MDLW/tasks.o
- .debug_macro   0x0001726a       0x22 ./src/MDLW/tasks.o
- .debug_macro   0x0001728c       0x10 ./src/MDLW/tasks.o
- .debug_macro   0x0001729c       0x20 ./src/MDLW/tasks.o
- .debug_macro   0x000172bc      0x1be ./src/MDLW/timers.o
- .debug_macro   0x0001747a       0x9e ./src/MDLW/timers.o
- .debug_macro   0x00017518      0x251 ./src/main.o
+ .debug_macro   0x000108a7      0x2ae ./src/APPL/KIT_Appl.o
+ .debug_macro   0x00010b55       0x7c ./src/APPL/KIT_Appl.o
+ .debug_macro   0x00010bd1       0x1c ./src/APPL/KIT_Appl.o
+ .debug_macro   0x00010bed       0x4c ./src/APPL/KIT_Appl.o
+ .debug_macro   0x00010c39       0x34 ./src/APPL/KIT_Appl.o
+ .debug_macro   0x00010c6d       0xa6 ./src/APPL/KIT_Appl.o
+ .debug_macro   0x00010d13       0x28 ./src/APPL/KIT_Appl.o
+ .debug_macro   0x00010d3b       0x5e ./src/APPL/KIT_Appl.o
+ .debug_macro   0x00010d99       0x64 ./src/APPL/KIT_Appl.o
+ .debug_macro   0x00010dfd      0x54d ./src/APPL/KIT_Appl.o
+ .debug_macro   0x0001134a      0x1ab ./src/APPL/KIT_Appl.o
+ .debug_macro   0x000114f5       0x28 ./src/APPL/KIT_Appl.o
+ .debug_macro   0x0001151d      0x16e ./src/APPL/KIT_Appl.o
+ .debug_macro   0x0001168b      0x2c9 ./src/APPL/KIT_Appl.o
+ .debug_macro   0x00011954      0x196 ./src/APPL/KIT_Appl.o
+ .debug_macro   0x00011aea      0x314 ./src/APPL/KIT_Appl.o
+ .debug_macro   0x00011dfe       0x16 ./src/APPL/KIT_Appl.o
+ .debug_macro   0x00011e14       0x16 ./src/APPL/KIT_Appl.o
+ .debug_macro   0x00011e2a       0x16 ./src/APPL/KIT_Appl.o
+ .debug_macro   0x00011e40       0x16 ./src/APPL/KIT_Appl.o
+ .debug_macro   0x00011e56      0x154 ./src/APPL/KIT_Appl.o
+ .debug_macro   0x00011faa       0x1c ./src/APPL/KIT_Appl.o
+ .debug_macro   0x00011fc6      0x182 ./src/APPL/KIT_Appl.o
+ .debug_macro   0x00012148       0xe7 ./src/APPL/KIT_Appl.o
+ .debug_macro   0x0001222f       0x2e ./src/APPL/KIT_Appl.o
+ .debug_macro   0x0001225d       0x1f ./src/APPL/KIT_Appl.o
+ .debug_macro   0x0001227c       0x12 ./src/APPL/KIT_Appl.o
+ .debug_macro   0x0001228e     0x10b7 ./src/APPL/KIT_Appl.o
+ .debug_macro   0x00013345       0xc3 ./src/APPL/KIT_Appl.o
+ .debug_macro   0x00013408      0x14f ./src/APPL/KIT_Appl.o
+ .debug_macro   0x00013557       0x80 ./src/APPL/KIT_Appl.o
+ .debug_macro   0x000135d7       0x77 ./src/APPL/KIT_Appl.o
+ .debug_macro   0x0001364e       0x10 ./src/APPL/KIT_Appl.o
+ .debug_macro   0x0001365e      0x1a5 ./src/MCAL/ADC_Core.o
+ .debug_macro   0x00013803      0x1a5 ./src/MCAL/FTMn_Core.o
+ .debug_macro   0x000139a8      0x1a5 ./src/MCAL/LPUART_Core.o
+ .debug_macro   0x00013b4d      0x1ab ./src/MCAL/NVIC_Core.o
+ .debug_macro   0x00013cf8      0x1a5 ./src/MCAL/PORT_Core.o
+ .debug_macro   0x00013e9d      0x1a5 ./src/MCAL/WDOG_Core.o
+ .debug_macro   0x00014042      0x1f9 ./src/MDLW/heap_4.o
+ .debug_macro   0x0001423b      0x16f ./src/MDLW/list.o
+ .debug_macro   0x000143aa      0x237 ./src/MDLW/port.o
+ .debug_macro   0x000145e1      0x1fb ./src/MDLW/queue.o
+ .debug_macro   0x000147dc      0x2f2 ./src/MDLW/tasks.o
+ .debug_macro   0x00014ace       0x16 ./src/MDLW/tasks.o
+ .debug_macro   0x00014ae4       0x16 ./src/MDLW/tasks.o
+ .debug_macro   0x00014afa       0x8b ./src/MDLW/tasks.o
+ .debug_macro   0x00014b85       0x22 ./src/MDLW/tasks.o
+ .debug_macro   0x00014ba7       0x10 ./src/MDLW/tasks.o
+ .debug_macro   0x00014bb7       0x20 ./src/MDLW/tasks.o
+ .debug_macro   0x00014bd7      0x1be ./src/MDLW/timers.o
+ .debug_macro   0x00014d95       0x9e ./src/MDLW/timers.o
+ .debug_macro   0x00014e33      0x255 ./src/main.o
 
-.debug_line     0x00000000     0x5c8c
+.debug_line     0x00000000     0x5958
  .debug_line    0x00000000      0x272 ./Project_Settings/Startup_Code/startup.o
  .debug_line    0x00000272       0x83 ./Project_Settings/Startup_Code/startup_S32K144.o
  .debug_line    0x000002f5      0x2aa ./Project_Settings/Startup_Code/system_S32K144.o
  .debug_line    0x0000059f      0x5ee ./src/APPL/KIT_Appl.o
- .debug_line    0x00000b8d      0x3d6 ./src/MCAL/ADC_Core.o
- .debug_line    0x00000f63      0x48a ./src/MCAL/FTMn_Core.o
- .debug_line    0x000013ed      0x418 ./src/MCAL/LPUART_Core.o
- .debug_line    0x00001805      0x38e ./src/MCAL/NVIC_Core.o
- .debug_line    0x00001b93      0x703 ./src/MCAL/PORT_Core.o
- .debug_line    0x00002296      0x3a4 ./src/MCAL/WDOG_Core.o
- .debug_line    0x0000263a      0x4e4 ./src/MDLW/heap_4.o
- .debug_line    0x00002b1e      0x3bb ./src/MDLW/list.o
- .debug_line    0x00002ed9      0x429 ./src/MDLW/port.o
- .debug_line    0x00003302      0xa11 ./src/MDLW/queue.o
- .debug_line    0x00003d13     0x11a2 ./src/MDLW/tasks.o
- .debug_line    0x00004eb5      0x653 ./src/MDLW/timers.o
- .debug_line    0x00005508      0x5bb ./src/main.o
- .debug_line    0x00005ac3       0x88 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memcpy.o)
- .debug_line    0x00005b4b       0x8f C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memset.o)
- .debug_line    0x00005bda       0xb2 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(__filll_mem.o)
+ .debug_line    0x00000b8d      0x3d8 ./src/MCAL/ADC_Core.o
+ .debug_line    0x00000f65      0x48a ./src/MCAL/FTMn_Core.o
+ .debug_line    0x000013ef      0x40f ./src/MCAL/LPUART_Core.o
+ .debug_line    0x000017fe      0x39e ./src/MCAL/NVIC_Core.o
+ .debug_line    0x00001b9c      0x3c3 ./src/MCAL/PORT_Core.o
+ .debug_line    0x00001f5f      0x3a7 ./src/MCAL/WDOG_Core.o
+ .debug_line    0x00002306      0x4e4 ./src/MDLW/heap_4.o
+ .debug_line    0x000027ea      0x3bb ./src/MDLW/list.o
+ .debug_line    0x00002ba5      0x429 ./src/MDLW/port.o
+ .debug_line    0x00002fce      0xa11 ./src/MDLW/queue.o
+ .debug_line    0x000039df     0x11a2 ./src/MDLW/tasks.o
+ .debug_line    0x00004b81      0x653 ./src/MDLW/timers.o
+ .debug_line    0x000051d4      0x5bb ./src/main.o
+ .debug_line    0x0000578f       0x88 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memcpy.o)
+ .debug_line    0x00005817       0x8f C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memset.o)
+ .debug_line    0x000058a6       0xb2 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(__filll_mem.o)
 
-.debug_str      0x00000000    0x8d1b7
+.debug_str      0x00000000    0x8230f
  .debug_str     0x00000000    0x68a51 ./Project_Settings/Startup_Code/startup.o
                               0x68aea (size before relaxing)
  .debug_str     0x00068a51      0x1f3 ./Project_Settings/Startup_Code/system_S32K144.o
                               0x68bb4 (size before relaxing)
- .debug_str     0x00068c44    0x1eb17 ./src/APPL/KIT_Appl.o
-                              0x87531 (size before relaxing)
- .debug_str     0x0008775b       0xf2 ./src/MCAL/ADC_Core.o
-                              0x7b8a2 (size before relaxing)
- .debug_str     0x0008784d      0x148 ./src/MCAL/FTMn_Core.o
-                              0x7ba14 (size before relaxing)
- .debug_str     0x00087995      0x174 ./src/MCAL/LPUART_Core.o
-                              0x7b963 (size before relaxing)
- .debug_str     0x00087b09      0x615 ./src/MCAL/NVIC_Core.o
-                              0x7be0d (size before relaxing)
- .debug_str     0x0008811e      0x12c ./src/MCAL/PORT_Core.o
-                              0x7b935 (size before relaxing)
- .debug_str     0x0008824a       0x3d ./src/MCAL/WDOG_Core.o
-                              0x7b804 (size before relaxing)
- .debug_str     0x00088287      0x81a ./src/MDLW/heap_4.o
+ .debug_str     0x00068c44    0x13cd2 ./src/APPL/KIT_Appl.o
+                              0x7c6f9 (size before relaxing)
+ .debug_str     0x0007c916       0xf2 ./src/MCAL/ADC_Core.o
+                              0x70ac3 (size before relaxing)
+ .debug_str     0x0007ca08      0x148 ./src/MCAL/FTMn_Core.o
+                              0x70c11 (size before relaxing)
+ .debug_str     0x0007cb50      0x16e ./src/MCAL/LPUART_Core.o
+                              0x70b78 (size before relaxing)
+ .debug_str     0x0007ccbe      0x68d ./src/MCAL/NVIC_Core.o
+                              0x710a2 (size before relaxing)
+ .debug_str     0x0007d34b       0x4c ./src/MCAL/PORT_Core.o
+                              0x70a31 (size before relaxing)
+ .debug_str     0x0007d397       0x40 ./src/MCAL/WDOG_Core.o
+                              0x70a28 (size before relaxing)
+ .debug_str     0x0007d3d7      0x822 ./src/MDLW/heap_4.o
                                0xf489 (size before relaxing)
- .debug_str     0x00088aa1      0x13e ./src/MDLW/list.o
+ .debug_str     0x0007dbf9      0x13e ./src/MDLW/list.o
                                0xd9ea (size before relaxing)
- .debug_str     0x00088bdf      0x8cd ./src/MDLW/port.o
+ .debug_str     0x0007dd37      0x8cd ./src/MDLW/port.o
                                0xf540 (size before relaxing)
- .debug_str     0x000894ac      0xc07 ./src/MDLW/queue.o
+ .debug_str     0x0007e604      0xc07 ./src/MDLW/queue.o
                               0x101f7 (size before relaxing)
- .debug_str     0x0008a0b3     0x2919 ./src/MDLW/tasks.o
+ .debug_str     0x0007f20b     0x2919 ./src/MDLW/tasks.o
                               0x11904 (size before relaxing)
- .debug_str     0x0008c9cc      0x57a ./src/MDLW/timers.o
+ .debug_str     0x00081b24      0x57a ./src/MDLW/timers.o
                               0x1044f (size before relaxing)
- .debug_str     0x0008cf46       0x94 ./src/main.o
-                              0x865a6 (size before relaxing)
- .debug_str     0x0008cfda      0x18e C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memcpy.o)
+ .debug_str     0x0008209e       0x94 ./src/main.o
+                              0x7b7a1 (size before relaxing)
+ .debug_str     0x00082132      0x18e C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memcpy.o)
                                 0x232 (size before relaxing)
- .debug_str     0x0008d168       0x22 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memset.o)
+ .debug_str     0x000822c0       0x22 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memset.o)
                                 0x23a (size before relaxing)
- .debug_str     0x0008d18a       0x2d C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(__filll_mem.o)
+ .debug_str     0x000822e2       0x2d C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(__filll_mem.o)
                                 0x24c (size before relaxing)
 
 .comment        0x00000000       0x70
@@ -3475,26 +3462,26 @@ OUTPUT(S32K144_Driver.elf elf32-littlearm)
  .comment       0x00000000       0x71 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memset.o)
  .comment       0x00000000       0x71 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(__filll_mem.o)
 
-.debug_frame    0x00000000     0x2088
+.debug_frame    0x00000000     0x1f8c
  .debug_frame   0x00000000       0x38 ./Project_Settings/Startup_Code/startup.o
  .debug_frame   0x00000038       0x80 ./Project_Settings/Startup_Code/system_S32K144.o
  .debug_frame   0x000000b8       0xc0 ./src/APPL/KIT_Appl.o
  .debug_frame   0x00000178       0xac ./src/MCAL/ADC_Core.o
  .debug_frame   0x00000224      0x174 ./src/MCAL/FTMn_Core.o
  .debug_frame   0x00000398       0xb4 ./src/MCAL/LPUART_Core.o
- .debug_frame   0x0000044c       0x30 ./src/MCAL/NVIC_Core.o
- .debug_frame   0x0000047c      0x178 ./src/MCAL/PORT_Core.o
- .debug_frame   0x000005f4       0x58 ./src/MCAL/WDOG_Core.o
- .debug_frame   0x0000064c      0x170 ./src/MDLW/heap_4.o
- .debug_frame   0x000007bc       0xd8 ./src/MDLW/list.o
- .debug_frame   0x00000894      0x178 ./src/MDLW/port.o
- .debug_frame   0x00000a0c      0x658 ./src/MDLW/queue.o
- .debug_frame   0x00001064      0xac4 ./src/MDLW/tasks.o
- .debug_frame   0x00001b28      0x404 ./src/MDLW/timers.o
- .debug_frame   0x00001f2c       0xe4 ./src/main.o
- .debug_frame   0x00002010       0x28 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memcpy.o)
- .debug_frame   0x00002038       0x28 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memset.o)
- .debug_frame   0x00002060       0x28 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(__filll_mem.o)
+ .debug_frame   0x0000044c       0x38 ./src/MCAL/NVIC_Core.o
+ .debug_frame   0x00000484       0x74 ./src/MCAL/PORT_Core.o
+ .debug_frame   0x000004f8       0x58 ./src/MCAL/WDOG_Core.o
+ .debug_frame   0x00000550      0x170 ./src/MDLW/heap_4.o
+ .debug_frame   0x000006c0       0xd8 ./src/MDLW/list.o
+ .debug_frame   0x00000798      0x178 ./src/MDLW/port.o
+ .debug_frame   0x00000910      0x658 ./src/MDLW/queue.o
+ .debug_frame   0x00000f68      0xac4 ./src/MDLW/tasks.o
+ .debug_frame   0x00001a2c      0x404 ./src/MDLW/timers.o
+ .debug_frame   0x00001e30       0xe4 ./src/main.o
+ .debug_frame   0x00001f14       0x28 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memcpy.o)
+ .debug_frame   0x00001f3c       0x28 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memset.o)
+ .debug_frame   0x00001f64       0x28 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(__filll_mem.o)
 
 .debug_loc      0x00000000      0x246
  .debug_loc     0x00000000       0x77 C:/NXP/S32DS_ARM_v2.2/S32DS/build_tools/gcc_v4.9/arm_ewl2/lib/armv7e-m/fpu\libc99.a(memcpy.o)
