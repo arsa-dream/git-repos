@@ -5,7 +5,7 @@
  * Standard: ISO 26262 ASIL-B
  *
  * Description:
- *   Application layer interface for the RGB Rainbow demo.
+ *   Application layer interface for the RGB sequential ramp demo.
  *   Demonstrates FTM0 PWM, GPIO, LPUART1, ADC0, PTC12 switch
  *   and FreeRTOS task coordination.
  *
@@ -59,13 +59,20 @@
 
 /*---------------------------------------------------------------------------
  * PWM duty cycle macros
- * Input: duty 0-255 (8-bit RGB scale matching HSV output)
+ * Input: duty 0-255 (8-bit RGB scale)
  * Formula: compare count = (duty / 255) * FTM0_CHx_MODULO_VAL
  * FTM0_CHx_MODULO_VAL is defined in FTMn_Cfg.h
  *--------------------------------------------------------------------------*/
-#define APPL_SET_RED_DUTY(duty)     FTMn_CHn_SET_CHANNEL_DUTYCNT(FTM0, 0u, ((uint32)(duty) * FTM0_CHx_MODULO_VAL) / 255u)
-#define APPL_SET_GREEN_DUTY(duty)   FTMn_CHn_SET_CHANNEL_DUTYCNT(FTM0, 1u, ((uint32)(duty) * FTM0_CHx_MODULO_VAL) / 255u)
-#define APPL_SET_BLUE_DUTY(duty)    FTMn_CHn_SET_CHANNEL_DUTYCNT(FTM0, 2u, ((uint32)(duty) * FTM0_CHx_MODULO_VAL) / 255u)
+/* LEDs are Active Low: duty=0 -> CnV=0 -> output LOW -> LED ON (inverted).  *
+ * Invert here so callers use natural 0=off, 255=full brightness.            */
+//#define APPL_SET_RED_DUTY(duty)     FTMn_CHn_SET_CHANNEL_DUTYCNT(FTM0, 0u, ((uint32)(255u - (duty)) * FTM0_CHx_MODULO_VAL) / 255u)
+//#define APPL_SET_GREEN_DUTY(duty)   FTMn_CHn_SET_CHANNEL_DUTYCNT(FTM0, 1u, ((uint32)(255u - (duty)) * FTM0_CHx_MODULO_VAL) / 255u)
+//#define APPL_SET_BLUE_DUTY(duty)    FTMn_CHn_SET_CHANNEL_DUTYCNT(FTM0, 2u, ((uint32)(255u - (duty)) * FTM0_CHx_MODULO_VAL) / 255u)
+
+#define APPL_SET_RED_DUTY(duty)     FTMn_CHn_SET_CHANNEL_DUTYCNT(FTM0, 0u, duty)
+#define APPL_SET_GREEN_DUTY(duty)   FTMn_CHn_SET_CHANNEL_DUTYCNT(FTM0, 1u, duty)
+#define APPL_SET_BLUE_DUTY(duty)    FTMn_CHn_SET_CHANNEL_DUTYCNT(FTM0, 2u, duty)
+
 
 /*---------------------------------------------------------------------------
  * UART output macro

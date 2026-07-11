@@ -11,7 +11,7 @@
 #include	"Headers.h"
 
 
-#define		LPUARTn_MAXRXBUFSIZE										30u
+#define		LPUARTn_MAXRXBUFSIZE										50u
 
 
 typedef	struct{
@@ -198,8 +198,8 @@ typedef		enum{
 #define 	LPUART_n_DISABLE_BAUD_RXEDGEINTRP(UartAddr)						(UartAddr -> BAUD &= ~LPUART_BAUD_RXEDGIE_MASK )
 #define		LPUART_n_FETCH_TxCOMPLETE(UartAddr)								(	(	(UartAddr -> STAT) & LPUART_STAT_TC_MASK	) >> LPUART_STAT_TC_SHIFT	)
 
-#define     LPUART_n_DISABLE_CTRL_RXINTP(UartAddr)							(UartAddr -> CTRL |= LPUART_CTRL_RIE(1u) )
-#define     LPUART_n_ENABLE_CTRL_RXINTP(UartAddr)							(UartAddr -> CTRL &= ~LPUART_CTRL_RIE_MASK )
+#define     LPUART_n_DISABLE_CTRL_RXINTP(UartAddr)							(UartAddr -> CTRL &= ~LPUART_CTRL_RIE_MASK )
+#define     LPUART_n_ENABLE_CTRL_RXINTP(UartAddr)							(UartAddr -> CTRL |= LPUART_CTRL_RIE(1u) )
 
 /* Dev Note 9 : Configures the input trigger usage. This field should only be changed when the transmitter and receiver
 are both disabled.*/

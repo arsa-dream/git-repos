@@ -10,7 +10,6 @@
 
 /*Library Includes*/
 
-#include "KIT_Appl.h"
 #include "devassert.h"
 #include "device_registers.h"
 #include "s32_core_cm4.h"
@@ -46,7 +45,7 @@
 #include "ADC_Cfg.h"
 
 //	../APPL
-
+#include "KIT_Appl.h"
 
 //	../
 

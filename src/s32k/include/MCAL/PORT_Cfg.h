@@ -48,19 +48,31 @@
 static const stPortPinCfg gkastPortPinCfg[] =
 {
     /*------------------------------------------------------------------------
-     * PORT B -- LPUART1 communication
+     * PORT B -- LPUART0 communication
      *----------------------------------------------------------------------*/
 
-    /* PTB0 -- LPUART1 RX
-     * ALT2 = LPUART1_RX, no pull, no interrupt                             */
+    /* PTB0 -- LPUART0 RX
+     * ALT2 = LPUART0_RX, no pull, no interrupt                             */
     { PORTB, PTB, 0u,  PORT_MUX_ALT2, PORT_IRQC_DISABLED,
       PORT_PIN_INPUT,  FALSE, FALSE, FALSE, FALSE, FALSE },
 
-    /* PTB1 -- LPUART1 TX
-     * ALT2 = LPUART1_TX, high drive strength for signal integrity           */
+    /* PTB1 -- LPUART0 TX
+     * ALT2 = LPUART0_TX, high drive strength for signal integrity           */
     { PORTB, PTB, 1u,  PORT_MUX_ALT2, PORT_IRQC_DISABLED,
       PORT_PIN_OUTPUT, TRUE,  FALSE, FALSE, FALSE, FALSE },
+    /*------------------------------------------------------------------------
+     * PORT C -- LPUART1 communication
+     *----------------------------------------------------------------------*/
 
+    /* PTC6 -- LPUART1 RX
+     * ALT2 = LPUART1_RX, no pull, no interrupt                             */
+    { PORTC, PTC, 6u,  PORT_MUX_ALT2, PORT_IRQC_DISABLED,
+      PORT_PIN_INPUT,  FALSE, FALSE, FALSE, FALSE, FALSE },
+
+    /* PTC7 -- LPUART1 TX
+     * ALT2 = LPUART1_TX, high drive strength for signal integrity           */
+    { PORTC, PTC, 7u,  PORT_MUX_ALT2, PORT_IRQC_DISABLED,
+      PORT_PIN_OUTPUT, TRUE,  FALSE, FALSE, FALSE, FALSE },
     /*------------------------------------------------------------------------
      * PORT C -- Switch inputs SW2, SW3
      *----------------------------------------------------------------------*/

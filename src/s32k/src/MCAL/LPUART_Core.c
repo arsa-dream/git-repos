@@ -10,9 +10,9 @@
  *   Interrupt-driven Tx with state machine, polling and ISR Rx.
  *
  * Clock:
- *   PCC_PCCn_PCS(0b010) selects SIRCDIV2 (8 MHz) as UART clock source.
+ *   PCC_PCCn_PCS(0b001) selects SOSCDIV2 (8 MHz crystal) as UART clock source.
  *   Baud rate = ClkHz / ((OSR+1) * SBR)
- *   Example at 115200: 8MHz / ((4+1) * 17) = ~94118 (see LPUARTn_Cfg.h)
+ *   LPUART1 @ 115200: 8MHz / ((9+1) * 7) = 114286 baud (-0.79%)
  *
  * Tx state machine (LPUART1):
  *   LPUart1_TransmitString() arms the buffer and enables Tx interrupt.
@@ -147,9 +147,9 @@ void LPUart0_Init(void)
 
 void LPUart1_Init(void)
 {
-    /* Enable PCC clock with SIRCDIV2 (8 MHz) as source                    */
+    /* Enable PCC clock with SOSCDIV2 (8 MHz crystal) as source            */
     PCC->PCCn[PCC_LPUART1_INDEX] &= ~PCC_PCCn_CGC_MASK;    /* Disable clock to change PCS */
-    PCC->PCCn[PCC_LPUART1_INDEX] |=  PCC_PCCn_PCS(0b010)   /* Clock Src=2: SIRCDIV2       */
+    PCC->PCCn[PCC_LPUART1_INDEX] |=  PCC_PCCn_PCS(0b001)   /* Clock Src=1: SOSCDIV2       */
                                   |  PCC_PCCn_CGC_MASK;     /* Enable clock                */
 
     /* Configure baud rate register                                         */
@@ -344,8 +344,9 @@ STD_FsmStates LPUart1_TransmitString(sint8 *s8DataBuf, uint8 u8Size)
         /* Mark transmitter busy before enabling interrupt                  */
         gu8TxStatusFlag = FALSE;
 
-        /* Enable Tx interrupt -- ISR will send first byte immediately      */
-        LPUART_n_ENABLE_CTRL_TXINTRP(LPUART1);
+        /* Enable TC interrupt -- TC=1 in idle state fires ISR immediately,
+         * which loads the first byte. Subsequent bytes sent on each TC.   */
+        LPUART_n_ENABLE_CTRL_TXCOMPLETEINTP(LPUART1);
         LPUART_n_DISABLE_CTRL_RXINTP(LPUART1);
 
         eRetval = STD_OK;
@@ -520,8 +521,8 @@ void INTERRUPT_ LPUART1_RxTx_IRQHandler(void)
         }
     }
 
-    /* Handle Tx complete -- transmit next byte or end transmission         */
-    if (TRUE == LPUART_n_FETCH_TxCOMPLETE(LPUART1))
+    /* Handle Tx complete -- only when TX is armed (gu8TxStatusFlag=FALSE)  */
+    if ((gu8TxStatusFlag == FALSE) && (TRUE == LPUART_n_FETCH_TxCOMPLETE(LPUART1)))
     {
         LPUARTn_COPY_TX_WORD(LPUART1,
             gstLPUARTTxBuf[eLPUART_1].s8Buffer[gstLPUARTTxBuf[eLPUART_1].u8IndexPos]);

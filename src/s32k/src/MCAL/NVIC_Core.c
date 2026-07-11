@@ -56,8 +56,8 @@ static const stNvicIrqCfg gkastNvicIrqCfg[] =
     /* FTM1 overflow / reload interrupt -- 1ms software timer tick          */
     { FTM1_Ovf_Reload_IRQn,     NVIC_PRIORITY_10 },
 
-    /* LPUART1 Rx/Tx interrupt                                              */
-    { LPUART1_RxTx_IRQn,        NVIC_PRIORITY_0  },
+    /* LPUART1 Rx/Tx interrupt -- priority 5: within FreeRTOS syscall range  */
+    { LPUART1_RxTx_IRQn,        NVIC_PRIORITY_5  },
 
     /* ADC0 conversion complete interrupt                                   */
     { ADC0_IRQn,                NVIC_PRIORITY_0  },

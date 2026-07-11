@@ -83,14 +83,14 @@
 	#define		LPUART_1_BAUD_MATCHMD1										DISABLE
 	#define		LPUART_1_BAUD_MATCHMD2										DISABLE
 	#define		LPUART_1_BAUD_TENBITMD										DISABLE
-	#define		LPUART_1_BAUD_OVRSAMPRATIO									LPUARTn_OVERSAMPLERATIO_4_BOTHEDGE			/* For Baud rate 115200 */
+	#define		LPUART_1_BAUD_OVRSAMPRATIO									LPUARTn_OVERSAMPLERATIO_10					/* OSR=10: 8MHz/(10x7)=114286 baud (-0.79%) */
 	#define		LPUART_1_BAUD_MATCHCFG										LPUART_x_MATCH_CFG_ADDR_WAKE_UP
 	#define		LPUART_1_BAUD_RESYNCDIS										DISABLE
 	#define		LPUART_1_BAUD_LINBRKINTRP									DISABLE
 	#define		LPUART_1_BAUD_RXACTEDGEINT									DISABLE
 	#define		LPUART_1_BAUD_NOOFSTOPBITS									LPUART_x_BAUD_ONESTOPBIT
-	#define		LPUART_1_BAUD_BAUDRATEMOD									17u      			//11.9				/* For Baud rate 115200 */
-	#define		LPUART_1_BAUD_BOTHEDGEEN									DISABLE
+	#define		LPUART_1_BAUD_BAUDRATEMOD									7u								/* SBR=7: 8MHz/(10x7)=114286 baud (-0.79%) */
+	#define		LPUART_1_BAUD_BOTHEDGEEN									DISABLE							/* Not required: OSR>=8 */
 	#define		LPUART_1_BAUD_RXDMA											DISABLE
 	#define		LPUART_1_BAUD_TXDMA											DISABLE
 	#define		LPUART_1_BAUD_RESYNC										DISABLE
